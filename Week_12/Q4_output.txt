@@ -1,0 +1,7 @@
+--- Loading Wine Dataset for Model Comparison ---
+
+--- Model Comparison on Test Set ---
+Logistic Regression       : Accuracy = 1.0000
+Decision Tree             : Accuracy = 0.9630
+Random Forest             : Accuracy = 1.0000
+Support Vector Machine    : Accuracy = 0.7593

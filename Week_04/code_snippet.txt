@@ -1,0 +1,11 @@
+   #Sort a list  in ascending and descending order
+   list = [10, 2, 15, 27, 35, 97]
+
+   # Ascending order
+   list.sort()
+   print(list)
+
+   # Descending order
+   list.sort( reverse=True)
+
+   print (list)    

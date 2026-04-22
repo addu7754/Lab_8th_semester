@@ -1,0 +1,8 @@
+Array 1: [10 20 30 40 50]
+Array 2: [ 2  4  5  8 10]
+
+1. Addition (arr1 + arr2): [12 24 35 48 60]
+2. Subtraction (arr1 - arr2): [ 8 16 25 32 40]
+3. Multiplication (arr1 * arr2): [ 20  80 150 320 500]
+4. Division (arr1 / arr2): [5. 5. 6. 5. 5.]
+5. Power (arr1 ^ 2): [ 100  400  900 1600 2500]

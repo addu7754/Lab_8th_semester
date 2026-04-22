@@ -1,0 +1,33 @@
+Sample DataFrame:
+    A   B   C   D   E
+0  52  93  15  72  61
+1  21  83  87  75  75
+2  88  24   3  22  53
+3   2  88  30  38   2
+4  64  60  21  33  76
+5  58  22  89  49  91
+6  59  42  92  60  80
+7  15  62  62  47  62
+8  51  55  64   3  51
+9   7  21  73  39  18
+
+Average value of second column: 55.0
+Average of first 5 rows of 3rd and 4th columns:
+C    31.2
+D    48.0
+dtype: float64
+
+Row-wise sum:
+0    293
+1    341
+2    190
+3    160
+4    254
+5    309
+6    333
+7    248
+8    224
+9    158
+dtype: int64
+
+Maximum average value in each row: 68.2

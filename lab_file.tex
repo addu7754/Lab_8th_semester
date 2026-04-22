@@ -1,0 +1,2969 @@
+\documentclass[a4paper,12pt]{article}
+
+% --- Packages for Lab Theme ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{parskip} % Adds space between paragraphs for better readability
+\usepackage{multirow}
+
+% --- Page Layout / Geometry ---
+\geometry{
+    left=25mm,
+    right=25mm,
+    top=30mm,
+    bottom=25mm
+}
+
+% --- Header and Footer Configuration ---
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[L]{Adnan Rashid}     
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{22CABSA767}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+% --- Hyperlink Setup ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Web Engineering - Week 01},
+}
+
+% --- Packages for Code Styling ---
+\usepackage{listings}
+\usepackage{inconsolata} % A clean, "hacker-style" monospaced font
+
+% --- Code Block Configuration ---
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeblue}{rgb}{0,0,0.6}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{hackerstyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue}\bfseries,
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{purple},
+    basicstyle=\ttfamily\small, % Uses the "typewriter" font (Inconsolata)
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    frame=single, % Adds a frame around the code
+    rulecolor=\color{black}
+}
+
+\lstset{style=hackerstyle}
+
+% --- Title Information ---
+\title{\textbf{Lab File}\\}
+\author{Adnan Rashid \\ Roll No: 22CABSA767}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty} % Removes header from title page
+\tableofcontents
+\newpage
+
+% Reset page numbering after title/TOC
+\setcounter{page}{1}
+
+% ---------------------------------------------------------
+% SECTION 1
+% ---------------------------------------------------------
+\fancyhead[R]{Week 01}
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 01}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+\section{Web Engineering}
+
+\subsection{What is Web Engineering?}
+
+Web engineering is a multidisciplinary field that focuses on the methodologies, techniques, and tools necessary for the development and maintenance of web applications. It combines elements of software engineering, web development, and project management to create robust, scalable, and efficient web solutions. Key aspects of web engineering include:
+
+\begin{itemize}
+    \item \textbf{Planning}: Understanding project requirements and defining the scope.
+    \item \textbf{Design}: Creating user interfaces and experiences that are functional and appealing.
+    \item \textbf{Development}: Writing code and implementing features according to specifications.
+    \item \textbf{Testing}: Ensuring the application works as intended and is free from bugs.
+    \item \textbf{Deployment}: Launching the web application for public use.
+    \item \textbf{Maintenance}: Regularly updating the application and fixing issues post-launch.
+\end{itemize}
+
+Web engineering is essential for creating high-quality web-based systems and applications that deliver complex content and functionality to a broad audience. It promotes the use of scientific, engineering, and management principles to ensure the long-term quality and integrity of web-based systems.
+
+% ---------------------------------------------------------
+% SECTION 1.2
+% ---------------------------------------------------------
+\subsection{Explore the core technologies used in web engineering, including HTML, CSS, JavaScript, and PHP, explain the role of each.}
+
+Web engineering relies on several core technologies to create functional and interactive websites and applications. The role of key technologies, including HTML, CSS, JavaScript, and PHP is as follows: 
+
+\subsubsection*{Core Technologies in Web Engineering}
+
+\subsubsection{HTML (HyperText Markup Language)}
+HTML provides the fundamental structure of a webpage. It uses tags to define elements like headings, paragraphs, images, and links, organizing content logically. Think of HTML as the blueprint or skeleton of a building, determining where all the components go. It is a declarative, not a programming, language.
+
+\subsubsection{CSS (Cascading Style Sheets)}
+CSS is used to control the visual presentation and layout of the document structure created by HTML. It defines aspects such as colors, fonts, spacing, and the responsive design of elements on different screen sizes. If HTML is the building's skeleton, CSS is the interior design and facade, making the page aesthetically pleasing and user-friendly.
+
+\subsubsection{JavaScript}
+JavaScript is a powerful, client-side scripting language that enables interactivity and dynamic behavior on webpages. It allows developers to create dynamic content updates, handle user events (like clicks or keyboard input), validate forms, and manage animations. JavaScript makes a website responsive to user actions without requiring a full page reload. In the building analogy, JavaScript is the functional electrical system and responsive features, allowing for actions like turning on lights or operating an elevator.
+
+\subsubsection{PHP (Hypertext Preprocessor)}
+PHP is a popular, general-purpose server-side scripting language. Unlike HTML, CSS, and client-side JavaScript, which run in the user's browser, PHP code is executed on the web server. It handles back-end tasks such as managing databases, processing forms securely, authenticating users, generating dynamic HTML content, and managing server-side data. PHP interacts with the database to retrieve or store information, making the website functional for applications like e-commerce sites or social media platforms.
+
+% ---------------------------------------------------------
+% SECTION 1.3
+% ---------------------------------------------------------
+\subsection{Identify front-end and back-end technologies used in web development and give examples of each.}
+
+Web development splits into Frontend (user-facing) and Backend (server-side logic/data), with common Frontend tools being HTML, CSS, JavaScript, React, Angular, and Vue, while Backend uses languages like Python, Java, PHP, Node.js, with frameworks like Django, Spring, and databases such as MySQL or MongoDB to handle data and server operations, ensuring the application works seamlessly.
+
+\subsubsection{Front-End Technologies (Client-Side)}
+These technologies build the user interface (UI) and user experience (UX) that users directly see and interact with in their browser.
+
+\paragraph{Languages:}
+\begin{description}
+    \item[HTML (HyperText Markup Language):] Structures the content of web pages (headings, paragraphs, images).
+    \item[CSS (Cascading Style Sheets):] Styles the appearance (colors, fonts, layout).
+    \item[JavaScript (JS):] Adds interactivity and dynamic features.
+\end{description}
+
+\paragraph{Frameworks and Libraries:}
+\begin{itemize}
+    \item \textbf{React:} A popular JavaScript library for building user interfaces (Facebook).
+    \item \textbf{Angular:} A comprehensive framework for complex applications (Google).
+    \item \textbf{Vue.js:} A progressive framework known for its ease of use.
+    \item \textbf{Bootstrap/Tailwind CSS:} CSS frameworks for responsive design.
+\end{itemize}
+
+\subsubsection{Back-End Technologies (Server-Side)}
+These handle the server, application logic, databases, and APIs that power the frontend.
+
+\paragraph{Languages:}
+\begin{itemize}
+    \item \textbf{Python:} Versatile, used with frameworks like Django (Instagram, Reddit).
+    \item \textbf{Java:} Robust for enterprise-level applications (Spring Boot).
+    \item \textbf{PHP:} Widely used for web development (WordPress, Laravel).
+    \item \textbf{Node.js:} Allows JavaScript on the server, great for real-time apps.
+    \item \textbf{Ruby:} Known for rapid development (Ruby on Rails).
+\end{itemize}
+
+\paragraph{Frameworks:}
+\begin{itemize}
+    \item \textbf{Django (Python):} For complex, database-driven applications.
+    \item \textbf{Spring (Java):} A comprehensive framework for enterprise Java.
+    \item \textbf{Laravel (PHP):} Elegant syntax for web artisans.
+    \item \textbf{Express.js (Node.js):} Minimalist framework for building APIs.
+\end{itemize}
+
+\paragraph{Databases:}
+\begin{itemize}
+    \item \textbf{SQL (MySQL, PostgreSQL):} Relational databases for structured data.
+    \item \textbf{NoSQL (MongoDB, Redis):} Document/key-value stores for flexible data.
+\end{itemize}
+
+\textbf{APIs (Application Programming Interfaces):} Allow frontend and backend to communicate.
+
+% ---------------------------------------------------------
+% SECTION 1.4
+% ---------------------------------------------------------
+\subsection{Explore popular web frameworks or platforms and write short notes on any two.}
+
+Web frameworks and platforms provide the fundamental building blocks—like libraries, templates, and session management—that allow developers to build and scale applications without reinventing the wheel. In 2026, the landscape is defined by meta-frameworks that handle both frontend and backend logic seamlessly, and AI-integrated backends that simplify complex data processing.
+
+Below are short notes on two of the most popular choices currently dominating the industry.
+
+\begin{enumerate}
+    \item \textbf{Next.js (Full-Stack / React Framework)} \\
+    Next.js has become the "industry standard" for building production-ready React applications. While React handles the user interface, Next.js provides the structural "skeleton" for the entire application.
+    
+    \textit{Key Philosophy: Hybrid Rendering.} It allows developers to choose how a page is rendered: on the server (SSR) for better SEO, statically at build time (SSG) for speed, or on the client (CSR) for interactivity.
+    
+    \textbf{Core Features:}
+    \begin{itemize}
+        \item \textit{File-based Routing:} You create a folder/file, and it automatically becomes a web route (e.g., about.js becomes /about).
+        \item \textit{Server Actions:} Introduced to simplify the "backend" part of the web, allowing you to write server-side functions (like database updates) directly inside your frontend components.
+        \item \textit{Optimization:} It automatically optimizes images, fonts, and scripts to ensure the fastest possible load times.
+    \end{itemize}
+    \textbf{Best For:} E-commerce sites, SEO-sensitive marketing pages, and large-scale SaaS dashboards.
+
+    \item \textbf{Django (Backend / Python Framework)} \\
+    Django is a "batteries-included" framework, meaning it comes with almost everything a developer needs to build a secure and scalable backend right out of the box.
+    
+    \textit{Key Philosophy: "Don't Repeat Yourself" (DRY).} Django focuses on automating as much as possible so developers can focus on writing the actual app logic rather than configuration.
+    
+    \textbf{Core Features:}
+    \begin{itemize}
+        \item \textit{Admin Interface:} One of Django's most famous features; it automatically generates a fully functional, professional-grade dashboard for managing your site's data.
+        \item \textit{Security by Default:} It includes built-in protection against common attacks like SQL injection, cross-site scripting (XSS), and clickjacking.
+        \item \textit{ORM (Object-Relational Mapper):} This allows developers to interact with their database (like PostgreSQL or MySQL) using Python code instead of writing complex SQL queries.
+    \end{itemize}
+    \textbf{Best For:} Data-heavy applications, AI/Machine Learning integrated platforms (since it uses Python), and secure FinTech or healthcare systems.
+\end{enumerate}
+
+% ---------------------------------------------------------
+% SECTION 1.5
+% ---------------------------------------------------------
+\subsection{Write a short note on the usage of web technologies in education, business or social platforms.}
+
+Web technologies have evolved from simple informational tools into dynamic, interactive ecosystems that underpin modern life. Whether in the classroom, the boardroom, or social circles, these technologies leverage high-speed connectivity, cloud computing, and Artificial Intelligence (AI) to bridge geographical gaps and enhance productivity.
+
+\begin{enumerate}
+    \item \textbf{Web Technologies in Education (EdTech)} \\
+    The education sector has undergone a massive transformation, moving from static textbooks to adaptive, personalized learning environments.
+    \begin{itemize}
+        \item \textit{Personalized Learning:} AI-driven platforms like Khan Academy and Coursera analyze student performance in real-time to adjust the difficulty of content.
+        \item \textit{Immersive Classrooms:} Technologies such as WebVR and WebXR allow students to take virtual field trips or simulate complex surgery from a browser.
+        \item \textit{LMS Platforms:} Learning Management Systems (e.g., Canvas, Moodle) centralize assignments, grading, and collaboration, making education accessible to remote and underserved areas.
+    \end{itemize}
+
+    \item \textbf{Web Technologies in Business} \\
+    For modern enterprises, the web is the backbone of operations, marketing, and global scaling.
+    \begin{itemize}
+        \item \textit{SaaS (Software as a Service):} Businesses no longer need to install heavy software; tools like Salesforce (CRM), Slack (communication), and Google Workspace allow teams to collaborate instantly from any device.
+        \item \textit{E-Commerce and Personalization:} Web technologies enable sophisticated data analytics to track consumer behavior, allowing businesses to offer "hyper-personalized" shopping experiences.
+        \item \textit{Remote Workforce:} Secure web protocols and cloud-native applications have made "work from anywhere" a standard, sustainable model for global companies.
+    \end{itemize}
+
+    \item \textbf{Web Technologies in Social Platforms} \\
+    Social platforms have redefined human interaction by creating "Global Villages" where information travels instantly.
+    \begin{itemize}
+        \item \textit{Real-time Interaction:} Technologies like WebSockets and WebRTC power the instant messaging and high-definition video calls found on platforms like WhatsApp and LinkedIn.
+        \item \textit{The Creator Economy:} Modern web frameworks have lowered the barrier to entry for content creators, allowing anyone to build a community and monetize skills via platforms like YouTube or TikTok.
+        \item \textit{Community Building:} Social platforms use complex algorithms to connect people with niche interests, fostering professional networking and social activism on a global scale.
+    \end{itemize}
+\end{enumerate}
+
+% ---------------------------------------------------------
+% WEEK 02 STARTS HERE
+% ---------------------------------------------------------
+
+\newpage                % Starts a fresh page
+\fancyhead[R]{Week 02}
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 02}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+% Start your Week 2 content
+\section{DATA SCIENCE}
+\subsection{In your own words, explain what data science is and why it is important in today's world?}
+
+Data science is the field of study that combines domain expertise, programming skills, and knowledge of mathematics and statistics to extract meaningful insights from data.
+
+ I think of data as "unrefined oil." It is valuable, but useless in its raw state. Data Science is the refinery that processes this raw data and turns it into fuel (information) that powers decisions, innovations, and strategies.
+
+\subsubsection*{The Core Components}
+Data science is often visualized as the intersection of three key areas:
+\begin{enumerate}
+    \item \textbf{Computer Science (IT):} The ability to code (Python, R, SQL) and manage databases to gather and clean data.
+    \item \textbf{Math \& Statistics:} The tools to analyze data, find patterns, and build predictive models.
+    \item \textbf{Domain Knowledge:} Understanding the specific industry (e.g., Finance, Healthcare, Marketing) to ask the right questions and interpret the answers correctly.
+\end{enumerate}
+
+\subsubsection*{Why is Data Science Important?}
+In today's world, we generate quintillions of bytes of data every day—from every Google search, credit card transaction, and social media. Data science is the only way to process this "Big Data." Its importance spans across every sector:
+
+\begin{itemize}
+    \item \textbf{Better Decision Making (Business Intelligence):} Companies no longer rely on "gut feeling" to make decisions. Data science allows businesses to analyze historical trends to minimize risk and maximize profit. For example, a retail store analyzes past sales data to decide exactly how much inventory to stock for the holiday season, avoiding waste.
+
+    \item \textbf{Predictive Analytics \& Future Forecasting:} Data science doesn't just explain \textit{what happened}; it predicts \textit{what will happen}. This is the foundation of the Machine Learning models used in financial trading, weather forecasting, and disease tracking. In healthcare, it is used to predict patient outbreaks or identify early signs of diseases (like Diabetic Retinopathy) before they become severe.
+
+    \item \textbf{Personalization and Recommendation Engines:} Tech giants use data science to tailor experiences to the individual user. When Netflix suggests a movie or Amazon suggests a product, it is a data science algorithm analyzing your past behavior and comparing it to millions of other users to predict what you will like.
+
+    \item \textbf{Scientific Research and Innovation:} In fields like bioinformatics and computer vision, data science is used to process complex datasets that humans cannot analyze manually. It accelerates drug discovery by simulating how different molecules interact with a virus, rather than testing them physically one by one.
+\end{itemize}
+
+% ---------------------------------------------------------
+% QUESTION 2
+% ---------------------------------------------------------
+\subsection{Identify and describe any five real world datasets.}
+
+Real-world datasets are essential for training and testing machine learning models. Below are five of the most widely used datasets in the data science community, covering various domains such as biology, history, computer vision, and transportation.
+
+\begin{enumerate}
+    \item \textbf{The Iris Flower Dataset} \\
+    \textit{Domain: Biology / Pattern Recognition} \\
+    Considered the "Hello World" of data science, this dataset was introduced by the statistician Ronald Fisher in 1936. It consists of 150 samples from three distinct species of Iris flowers (Setosa, Versicolor, and Virginica).
+    \begin{itemize}
+        \item \textbf{Features:} It contains four features: Sepal Length, Sepal Width, Petal Length, and Petal Width.
+        \item \textbf{Usage:} It is primarily used for learning supervised machine learning algorithms, specifically multi-class classification problems.
+    \end{itemize}
+
+    \item \textbf{The Titanic Dataset} \\
+    \textit{Domain: History / Risk Analysis} \\
+    Sourced from the tragic sinking of the RMS Titanic in 1912, this dataset allows students to predict which passengers were likely to survive based on their personal characteristics.
+    \begin{itemize}
+        \item \textbf{Features:} Includes variables such as Passenger Class, Name, Sex, Age, Siblings/Spouses aboard, Parents/Children aboard, and Fare price.
+        \item \textbf{Usage:} Ideally used for binary classification (Survived vs. Deceased) and practicing data cleaning techniques (handling missing values).
+    \end{itemize}
+
+    \item \textbf{MNIST Database of Handwritten Digits} \\
+    \textit{Domain: Computer Vision} \\
+    The MNIST (Modified National Institute of Standards and Technology) dataset is the standard benchmark for image processing systems. It contains 70,000 grayscale images of handwritten digits (0 through 9).
+    \begin{itemize}
+        \item \textbf{Features:} Each image is a $28 \times 28$ pixel matrix representing a single digit.
+        \item \textbf{Usage:} It is the go-to dataset for training Neural Networks and Deep Learning models to recognize optical characters.
+    \end{itemize}
+
+    \item \textbf{COVID-19 Global Case Data (JHU/WHO)} \\
+    \textit{Domain: Healthcare / Epidemiology} \\
+    Since 2020, Johns Hopkins University and the WHO have maintained comprehensive datasets tracking the pandemic. These are time-series datasets that change daily.
+    \begin{itemize}
+        \item \textbf{Features:} Confirmed cases, deaths, and recoveries, organized by country, region, and date.
+        \item \textbf{Usage:} Used for time-series forecasting, data visualization (dashboards), and predictive modeling of disease spread.
+    \end{itemize}
+
+    \item \textbf{Uber Pickups in New York City} \\
+    \textit{Domain: Transportation / Geospatial Analysis} \\
+    This dataset contains data on over 4.5 million Uber pickups in New York City. It provides granular data on urban movement and traffic patterns.
+    \begin{itemize}
+        \item \textbf{Features:} Date/Time of pickup, Latitude, Longitude, and the base company code.
+        \item \textbf{Usage:} Essential for spatial data analysis, clustering (finding "hotspots" for rides), and heat-map visualization.
+    \end{itemize}
+\end{enumerate}
+
+% ---------------------------------------------------------
+%  QUESTION 3
+% ---------------------------------------------------------
+\subsection{List major tools used in Data Science (Programming Languages, Libraries, Platforms) and state their purpose.}
+
+Data science requires a diverse technology stack to handle everything from data extraction to complex machine learning. The tools can be categorized into languages for logic, libraries for specific tasks, and platforms for development and visualization.
+
+\subsubsection{1. Programming Languages}
+\begin{description}
+    \item[Python:] The most popular language in data science due to its simplicity and massive ecosystem of libraries. It is a general-purpose language used for everything from web scraping to deep learning.
+    \item[R:] A language built specifically for statistical analysis and graphical representation. It is highly favored in academia and research for complex statistical modeling.
+    \item[SQL (Structured Query Language):] The standard language for interacting with relational databases. It is essential for querying, retrieving, and manipulating the raw data stored in company systems.
+\end{description}
+
+\subsubsection{2. Libraries and Frameworks}
+These are collections of pre-written code that extend the capabilities of the programming languages.
+
+\begin{description}
+    \item[Pandas (Python):] The industry standard for data manipulation and analysis. It provides "DataFrames" that allow for easy handling of structured data (like Excel sheets) within code.
+    \item[NumPy (Python):] Adds support for large, multi-dimensional arrays and matrices, along with a collection of high-level mathematical functions to operate on these arrays.
+    \item[Scikit-Learn (Python):] A robust machine learning library featuring various classification, regression, and clustering algorithms (like SVMs, Random Forests, and k-Means).
+    \item[TensorFlow / PyTorch:] Advanced libraries used for Deep Learning and Neural Networks. They are essential for tasks involving image recognition, natural language processing (NLP), and AI.
+    \item[Matplotlib / Seaborn:] Plotting libraries used for data visualization. They help convert complex numerical data into understandable graphs, charts, and heatmaps.
+\end{description}
+
+\subsubsection{3. Platforms and Environments}
+\begin{description}
+    \item[Jupyter Notebooks:] An open-source web application that allows developers to create and share documents containing live code, equations, visualizations, and narrative text. It is the standard "scratchpad" for data scientists.
+    \item[Tableau / PowerBI:] Business Intelligence (BI) platforms used for creating interactive data visualizations and dashboards. They allow non-technical stakeholders to view and understand data insights.
+    \item[Kaggle:] A community platform owned by Google that hosts datasets, machine learning competitions, and cloud-based coding environments (kernels). It is a central hub for learning and collaboration.
+    \item[Apache Hadoop / Spark:] Frameworks designed for "Big Data." They allow for the distributed processing of massive datasets across clusters of computers.
+\end{description}
+
+% ---------------------------------------------------------
+% QUESTION 4
+% ---------------------------------------------------------
+\subsection{Explore and Write short notes on any three data science frameworks.}
+
+Frameworks provide the structural support and pre-built components that allow data scientists to build complex models without writing every algorithm from scratch. Below are three of the most influential frameworks in the industry.
+
+\begin{enumerate}
+    \item \textbf{TensorFlow} \\
+    Developed by the Google Brain team, TensorFlow is an end-to-end open-source platform for machine learning. It is widely regarded as the industry standard for production-grade deep learning.
+    \begin{itemize}
+        \item \textbf{Core Mechanism:} It operates using "Data Flow Graphs," where nodes represent mathematical operations and edges represent the multidimensional data arrays (tensors) that flow between them.
+        \item \textbf{Key Advantage:} It offers a comprehensive ecosystem (TFX) for deploying models to various platforms, including servers, mobile devices (TensorFlow Lite), and the web (TensorFlow.js).
+    \end{itemize}
+
+    \item \textbf{PyTorch} \\
+    Developed by Meta (Facebook’s AI Research lab), PyTorch has become the preferred framework for academic research and rapid prototyping due to its flexibility.
+    \begin{itemize}
+        \item \textbf{Core Mechanism:} Unlike TensorFlow's static graphs, PyTorch uses "Dynamic Computational Graphs." This allows developers to modify the graph on-the-fly during execution, making debugging significantly easier.
+        \item \textbf{Key Advantage:} It is extremely "Pythonic," meaning it integrates seamlessly with the Python language, making it intuitive for developers who are already familiar with Python data structures.
+    \end{itemize}
+
+    \item \textbf{Apache Spark} \\
+    While TensorFlow and PyTorch focus on AI models, Apache Spark is a unified analytics engine designed for processing massive datasets (Big Data).
+    \begin{itemize}
+        \item \textbf{Core Mechanism:} Spark processes data in-memory (RAM) rather than reading/writing to hard drives (like its predecessor, Hadoop MapReduce). This makes it up to 100x faster for certain workloads.
+        \item \textbf{Key Advantage:} It is a general-purpose framework that supports SQL queries, streaming data, and machine learning (MLlib) all in one system, allowing data scientists to handle petabytes of data efficiently.
+    \end{itemize}
+\end{enumerate}
+% ---------------------------------------------------------
+% QUESTION 5
+% ---------------------------------------------------------
+\subsection{Identify different roles in Data Science(e.g., Data Analyst, Data Scientist, ML Engineer) and their responsibilties.}
+
+Data Science is a team sport. While the titles are often used interchangeably, there are distinct differences in focus and skill sets between the three primary roles.
+
+\begin{enumerate}
+    \item \textbf{Data Analyst} \\
+    \textit{Focus: "What happened?" (Descriptive Analytics)} \\
+    A Data Analyst is the detective of the team. They focus on processing historical data to identify trends, patterns, and insights that can answer specific business questions immediately. They bridge the gap between raw data and business stakeholders.
+    \begin{itemize}
+        \item \textbf{Responsibilities:}
+        \item Cleaning and organizing raw data (Data Wrangling).
+        \item Writing complex SQL queries to extract data from databases.
+        \item Creating visual dashboards and reports using tools like Tableau, PowerBI, or Excel.
+        \item Communicating findings to non-technical teams to guide business strategy.
+    \end{itemize}
+
+    \item \textbf{Data Scientist} \\
+    \textit{Focus: "What will happen?" (Predictive Analytics)} \\
+    A Data Scientist is the innovator. They use advanced mathematics, statistics, and machine learning to build models that can predict future outcomes. Their work is more experimental and research-heavy than that of an analyst.
+    \begin{itemize}
+        \item \textbf{Responsibilities:}
+        \item Formulating and testing hypotheses (A/B testing).
+        \item Building and training predictive models (e.g., predicting customer churn).
+        \item Selecting the appropriate machine learning algorithms for specific problems.
+        \item Optimizing model accuracy using hyperparameter tuning.
+    \end{itemize}
+
+    \item \textbf{Machine Learning (ML) Engineer} \\
+    \textit{Focus: "How do we make it work at scale?" (Production Engineering)} \\
+    An ML Engineer is the builder. Once a Data Scientist proves that a model works in a lab setting, the ML Engineer takes that model and turns it into a scalable software product that can handle millions of users. They sit at the intersection of Data Science and DevOps.
+    \begin{itemize}
+        \item \textbf{Responsibilities:}
+        \item Deploying machine learning models into production environments.
+        \item Building and maintaining scalable data pipelines (ETL).
+        \item Monitoring model performance and "drift" over time.
+        \item Optimizing code for latency and speed (ensuring the model runs fast in real-time).
+    \end{itemize}
+\end{enumerate}
+
+% ---------------------------------------------------------
+% QUESTION 6
+% ---------------------------------------------------------
+\subsection{Write a short note on the usage of data science in your own domain of interest.}
+
+Data Science has fundamentally shifted medical research from a reactive discipline (treating symptoms) to a proactive one (predicting and preventing disease). By integrating "Big Data" with high-performance computing, researchers can now analyze complex biological systems at a scale previously impossible.
+
+Key areas where Data Science is transforming medical research include:
+
+\begin{enumerate}
+    \item \textbf{Medical Imaging and Diagnosis (Computer Vision)} \\
+    Data science algorithms, particularly Convolutional Neural Networks (CNNs), are used to analyze medical images (X-rays, MRIs, CT scans) with superhuman accuracy.
+    \begin{itemize}
+        \item \textit{Application:} Detecting early signs of tumors, fractures, or conditions like Diabetic Retinopathy by analyzing pixel patterns that are too subtle for the human eye to catch immediately.
+    \end{itemize}
+
+    \item \textbf{Drug Discovery and Development} \\
+    Traditional drug discovery is expensive and time-consuming (often taking 10+ years). Data science accelerates this by simulating how different molecules interact with biological targets virtually (in silico) before physical testing.
+    \begin{itemize}
+        \item \textit{Application:} Using AI models (like AlphaFold) to predict 3D protein structures, drastically shortening the time needed to develop vaccines or new antibiotics.
+    \end{itemize}
+
+    \item \textbf{Genomics and Precision Medicine} \\
+    Instead of a "one-size-fits-all" approach, data science allows researchers to analyze a patient's genetic makeup (genomics) to tailor treatments specifically to them.
+    \begin{itemize}
+        \item \textit{Application:} Identifying specific genetic mutations in cancer patients to determine which chemotherapy drugs will be most effective, minimizing side effects.
+    \end{itemize}
+
+    \item \textbf{Predictive Analytics and Epidemiology} \\
+    By analyzing historical patient data, researchers can build models to predict disease outbreaks or individual patient deterioration.
+    \begin{itemize}
+        \item \textit{Application:} Predicting which patients are at high risk for sepsis or heart failure hours before symptoms appear, allowing doctors to intervene earlier.
+    \end{itemize}
+\end{enumerate}
+% ---------------------------------------------------------
+% WEEK 03
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 03}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 03}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Python and HTML Programming}
+\subsection{Write a python program to generate the first n fibonacci numbers using a loop. }
+
+\begin{lstlisting}[language=Python, caption={ print "n" fibonacci numbers}]
+def fib(n: int):
+    a, b = 0, 1
+    
+    for _ in range(n):
+        print(a)
+        # 'a' becomes 'b', and 'b' becomes the sum
+        a, b = b, a + b
+
+if __name__ == "__main__":
+    n = int(input("Enter how many fibonacci numbers you want to print: "))
+    fib(n)
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Enter how many fibonacci numbers you want to print: 10
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+\end{lstlisting}
+
+\subsection{Write a python program to count the number of vowels in a given string.}
+
+\begin{lstlisting}[language=Python, caption={ count the vowels }]
+str = input("Enter a String\n")
+vowels = ['a','e','i','o','u','A','E','I','O','U']
+count = 0
+for alphabet in str:
+    if alphabet in vowels:
+        count+=1
+print(f"The number of vowels is {count}")
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Enter a String
+Adnan
+The number of vowels is 2
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% QUESTION 3: HTML TABLE
+% ---------------------------------------------------------
+\subsection{HTML Table Construction}
+
+\textbf{Problem Statement:} \\
+Create the following table in HTML with Dummy Data:
+
+% This creates the visual representation of the table for the problem
+\begin{center}
+\begin{tabular}{|l|l|l|l|c|c|l|}
+\hline
+\multirow{2}{*}{\textbf{Name of the Train}} & \multirow{2}{*}{\textbf{Place}} & \multirow{2}{*}{\textbf{Destination}} & \multirow{2}{*}{\textbf{Train No.}} & \multicolumn{2}{c|}{\textbf{Time}} & \multirow{2}{*}{\textbf{Fair}} \\ 
+\cline{5-6}
+ & & & & \textbf{Arrival} & \textbf{Departure} & \\ 
+\hline
+Rajdhani Exp & New Delhi & Mumbai & 12951 & 16:25 & 08:35 & 2800 \\ \hline
+Shatabdi Exp & Lucknow & New Delhi & 12003 & 15:35 & 22:30 & 1200 \\ \hline
+Vande Bharat & Varanasi & New Delhi & 22435 & 15:00 & 23:00 & 1800 \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{3cm}
+\textbf{Source Code:}
+
+\begin{lstlisting}[language=HTML, caption={HTML Code for Train Schedule Table}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Train Schedule</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Train Schedule</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th rowspan="2">Name of the Train</th>
+                <th rowspan="2">Place</th>
+                <th rowspan="2">Destination</th>
+                <th rowspan="2">Train No.</th>
+                <th colspan="2" ">Time</th>
+                <th rowspan="2">Fair</th>
+            </tr>
+            <tr>
+                <th>Arrival</th>
+                <th>Departure</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Rajdhani Exp</td>
+                <td>New Delhi</td>
+                <td>Mumbai</td>
+                <td>12951</td>
+                <td>16:25</td>
+                <td>08:35</td>
+                <td>2800</td>
+            </tr>
+            <tr>
+                <td>Shatabdi Exp</td>
+                <td>Lucknow</td>
+                <td>New Delhi</td>
+                <td>12003</td>
+                <td>15:35</td>
+                <td>22:30</td>
+                <td>1200</td>
+            </tr>
+            <tr>
+                <td>Vande Bharat</td>
+                <td>Varanasi</td>
+                <td>New Delhi</td>
+                <td>22435</td>
+                <td>15:00</td>
+                <td>23:00</td>
+                <td>1800</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
+\end{lstlisting}
+% ---------------------------------------------------------
+% WEEK 04 STARTS HERE
+% ---------------------------------------------------------
+
+\newpage
+\fancyhead[R]{Week 04} % Updates header to Week 04
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 04}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Basic Python and Advanced HTML Layouts}
+
+% Question 1
+
+\subsection{Dictionaries and lists in python}
+\textbf{Create a dictionary of student names and marks. Display students scoring above 75. }
+\begin{lstlisting}[language=Python, caption={ Dictionary.}]
+#Create a dictionary of student names and marks
+student_details = {
+    'Aman': 85,
+    'joey': 60,
+    'Chandler': 92,
+    'monica': 75,
+    'Gulzar': 88,
+    'Ammar': 70
+}
+
+#Display students scoring above 75
+print("Students scoring above 75:")
+for name, marks in student_details.items():
+    if marks > 75:
+        print(f"{name}")
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Students scoring above 75:
+Aman
+Chandler
+Gulzar
+\end{lstlisting}
+
+
+%Question 2
+
+\textbf{Write a program to sort a list in ascending and descending order.}
+\begin{lstlisting}[language = Python, caption = {Sorting Lists}]
+   #Sort a list  in ascending and descending order
+   list = [10, 2, 15, 27, 35, 97]
+
+   # Ascending order
+   list.sort()
+   print(list)
+
+   # Descending order
+   list.sort( reverse=True)
+
+   print (list)    
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% QUESTION 3
+% ---------------------------------------------------------
+\subsection{Complex Table Merging (Rowspan \& Colspan)}
+
+\textbf{Problem Statement:} \\
+Write HTML code to generate the following output layout:
+
+\begin{center}
+% This LaTeX table recreates the visual prompt from your image
+\renewcommand{\arraystretch}{1.5} % Increases row height slightly for better look
+\begin{tabular}{|c|c|c|c|}
+\hline
+1 & 2 & 3 & 4 \\ \hline
+5 & \multicolumn{2}{c|}{\multirow{2}{*}{\textbf{Image}}} & 6 \\ \cline{1-1} \cline{4-4} 
+% \cline draws lines only under cells 1 and 4, leaving the middle open for the image
+7 & \multicolumn{2}{c|}{} & 8 \\ \hline
+9 & 10 & 11 & 12 \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.5cm}
+\textbf{Source Code Solution:}
+
+\begin{lstlisting}[language=HTML, caption={HTML Code for Merged Grid}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complex Table Layout</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+        }
+        td {
+            border: 1px solid black;
+            padding: 15px;
+            font-size: 18px;
+        }
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100px; /* Adjust image size */
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td colspan="2" rowspan="2">
+                <img src="my-image.jpg" alt="Center Image">
+            </td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+\end{lstlisting}
+% ---------------------------------------------------------
+% QUESTION 4: FRAMESET LAYOUT
+% ---------------------------------------------------------
+\subsection{Frame-based Layout (Rows and Columns)}
+
+\textbf{Problem Statement:} \\
+Write an HTML code to develop a web page having two frames that divide the web page into two equal rows. Then, divide the second row into two equal columns. Fill each frame with a different background color.
+\vspace{0.5cm}
+
+\textbf{Source Code Solution:}
+
+\begin{lstlisting}[language=HTML, caption={HTML Frameset Code}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frameset Layout</title>
+</head>
+<frameset rows="50%, 50%">
+    
+    <frame src="about:blank" style="background-color: #ffcccc;" name="topFrame">
+    
+    <frameset cols="50%, 50%">
+        
+        <frame src="about:blank" style="background-color: #ccffcc;" name="leftFrame">
+        
+        <frame src="about:blank" style="background-color: #ccccff;" name="rightFrame">
+        
+    </frameset>
+    
+</frameset>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 05
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 05}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 05}} \\
+    \vspace{1cm}
+\end{center}
+
+% =========================================================
+% SECTION: DATA SCIENCE
+% =========================================================
+\section{Data Science (NumPy)}
+
+% ---------------------------------------------------------
+% QUESTION 1
+% ---------------------------------------------------------
+\subsection{Basic Arithmetic Operations on NumPy Arrays}
+\textbf{Problem Statement:} \\
+Perform at least five basic arithmetic operations on NumPy arrays (addition, subtraction, multiplication, division, and exponentiation).
+
+\begin{lstlisting}[language=Python, caption={NumPy Arithmetic Operations}]
+import numpy as np
+
+def numpy_arithmetic():
+    # Create two sample arrays
+    arr1 = np.array([10, 20, 30, 40, 50])
+    arr2 = np.array([2, 4, 5, 8, 10])
+
+    print("Array 1:", arr1)
+    print("Array 2:", arr2)
+
+    # 1. Addition
+    print("\n1. Addition (arr1 + arr2):", arr1 + arr2)
+
+    # 2. Subtraction
+    print("2. Subtraction (arr1 - arr2):", arr1 - arr2)
+
+    # 3. Multiplication
+    print("3. Multiplication (arr1 * arr2):", arr1 * arr2)
+
+    # 4. Division
+    print("4. Division (arr1 / arr2):", arr1 / arr2)
+
+    # 5. Exponentiation (Power)
+    print("5. Power (arr1 ^ 2):", np.power(arr1, 2))
+
+if __name__ == "__main__":
+    numpy_arithmetic()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Array 1: [10 20 30 40 50]
+Array 2: [ 2  4  5  8 10]
+
+1. Addition (arr1 + arr2): [12 24 35 48 60]
+2. Subtraction (arr1 - arr2): [ 8 16 25 32 40]
+3. Multiplication (arr1 * arr2): [ 20  80 150 320 500]
+4. Division (arr1 / arr2): [5. 5. 6. 5. 5.]
+5. Power (arr1 ^ 2): [ 100  400  900 1600 2500]
+\end{lstlisting}
+
+
+% ---------------------------------------------------------
+% QUESTION 2
+% ---------------------------------------------------------
+\subsection{NumPy Indexing and Slicing}
+\textbf{Problem Statement:} \\
+Take a NumPy array and demonstrate indexing (accessing specific elements) and slicing (extracting a sub-part of the array).
+
+\begin{lstlisting}[language=Python, caption={NumPy Indexing and Slicing}]
+import numpy as np
+
+def indexing_slicing():
+    # Create a 2D array (Matrix) for better demonstration
+    arr = np.array([
+        [1, 2, 3, 4],
+        [5, 6, 7, 8],
+        [9, 10, 11, 12]
+    ])
+    
+    print("Original Array:\n", arr)
+
+    # --- Indexing ---
+    # Accessing specific elements
+    element = arr[1, 2] # Row 1, Column 2 (Value: 7)
+    print(f"\nElement at [1, 2]: {element}")
+
+    # --- Slicing ---
+    # Slicing rows: Row 0 and 1
+    print("\nSlice (First 2 Rows):\n", arr[0:2, :])
+
+    # Slicing columns: Column 1 and 2 for all rows
+    print("\nSlice (Middle Columns):\n", arr[:, 1:3])
+
+if __name__ == "__main__":
+    indexing_slicing()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Original Array:
+ [[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+
+Element at [1, 2]: 7
+
+Slice (First 2 Rows):
+ [[1 2 3 4]
+ [5 6 7 8]]
+
+Slice (Middle Columns):
+ [[ 2  3]
+ [ 6  7]
+ [10 11]]
+\end{lstlisting}
+
+
+% =========================================================
+% SECTION: WEB ENGINEERING
+% =========================================================
+\section{Web Engineering (HTML \& Forms)}
+
+% ---------------------------------------------------------
+% QUESTION 3
+% ---------------------------------------------------------
+\subsection{Interactive Form with JavaScript}
+\textbf{Problem Statement:} \\
+Design a page with a text box called 'name' (default value "Victoria") and two buttons:
+\begin{enumerate}
+    \item \textbf{Enter:} Opens a new window with the message "Welcome [Name]".
+    \item \textbf{Reset:} Changes the text box value to 100.
+\end{enumerate}
+
+\begin{lstlisting}[language=HTML, caption={Form with JS Logic}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Form</title>
+    <script>
+        function showWelcome() {
+            // Get the value from the input box
+            var name = document.getElementById("nameInput").value;
+            
+            // Open a new window and write the message
+            var newWindow = window.open("", "_blank", "width=400,height=200");
+            newWindow.document.write("<h1>Welcome " + name + "</h1>");
+        }
+
+        function resetValue() {
+            // Requirement: Set value to "100" on click
+            document.getElementById("nameInput").value = "100";
+        }
+    </script>
+</head>
+<body>
+
+    <h2>User Interaction</h2>
+    
+    <label>Name:</label>
+    <input type="text" id="nameInput" value="Victoria">
+    <br><br>
+
+    <button onclick="showWelcome()">Enter</button>
+    <button onclick="resetValue()">Reset</button>
+
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% QUESTION 4
+% ---------------------------------------------------------
+\subsection{HTML Form with All Input Types}
+\textbf{1:} \\
+Design a comprehensive HTML form that utilizes various input types (text, password, email, number, date, radio, checkbox, etc.).
+
+\begin{lstlisting}[language=HTML, caption={Comprehensive HTML Form}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Input Types</title>
+</head>
+<body>
+
+    <h2>Student Registration Form</h2>
+    
+    <form>
+        <label>Full Name:</label>
+        <input type="text" placeholder="John Doe"><br><br>
+
+        <label>Email:</label>
+        <input type="email" placeholder="john@example.com"><br><br>
+
+        <label>Password:</label>
+        <input type="password"><br><br>
+
+        <label>Age:</label>
+        <input type="number" min="18" max="100"><br><br>
+
+        <label>Date of Birth:</label>
+        <input type="date"><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" value="Male"> Male
+        <input type="radio" name="gender" value="Female"> Female<br><br>
+
+        <label>Skills:</label>
+        <input type="checkbox"> HTML
+        <input type="checkbox"> Python
+        <input type="checkbox"> SQL<br><br>
+
+        <label>Upload Resume:</label>
+        <input type="file"><br><br>
+
+        <label>Favorite Color:</label>
+        <input type="color"><br><br>
+
+        <label>Experience Level:</label>
+        <input type="range" min="1" max="10"><br><br>
+    </form>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 06 STARTS HERE
+% ---------------------------------------------------------
+
+\newpage
+\fancyhead[R]{Week 06}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 06}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Data Science Problems}
+
+% ---------------------------------------------------------
+% QUESTION 1
+% ---------------------------------------------------------
+\subsection{Random Array Min and Max Values}
+\textbf{Problem Statement:} \\
+Generate a random array and find its maximum and minimum values.
+
+\begin{lstlisting}[language=Python, caption={Random Array Min/Max}]
+import numpy as np
+
+def main():
+    # Generate a random array of 10 elements between 1 and 100
+    rand_array = np.random.randint(1, 100, 10)
+    print(f"Random Array: {rand_array}")
+    
+    # Find max and min
+    max_val = np.max(rand_array)
+    min_val = np.min(rand_array)
+    
+    print(f"Maximum Value: {max_val}")
+    print(f"Minimum Value: {min_val}")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% QUESTION 2
+% ---------------------------------------------------------
+\subsection{Reshaping Elements of Array}
+\textbf{Problem Statement:} \\
+Reshape a one-dimensional array into a matrix of different sizes.
+
+\begin{lstlisting}[language=Python, caption={Reshape array}]
+import numpy as np
+
+def main():
+    # Create a 1D array of 12 elements
+    arr_1d = np.arange(1, 13)
+    print(f"Original 1D Array:\n{arr_1d}\n")
+    
+    # Reshape to a 3x4 matrix
+    matrix_3x4 = arr_1d.reshape(3, 4)
+    print(f"Reshaped to 3x4 Matrix:\n{matrix_3x4}\n")
+    
+    # Reshape to a 2x6 matrix
+    matrix_2x6 = arr_1d.reshape(2, 6)
+    print(f"Reshaped to 2x6 Matrix:\n{matrix_2x6}\n")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Original 1D Array:
+[ 1  2  3  4  5  6  7  8  9 10 11 12]
+
+Reshaped to 3x4 Matrix:
+[[ 1  2  3  4]
+ [ 5  6  7  8]
+ [ 9 10 11 12]]
+
+Reshaped to 2x6 Matrix:
+[[ 1  2  3  4  5  6]
+ [ 7  8  9 10 11 12]]
+\end{lstlisting}
+
+
+\section{Problems based on HTML and JavaScript}
+
+% ---------------------------------------------------------
+% QUESTION 3
+% ---------------------------------------------------------
+\subsection{Multi-page Form Data Transfer (ABC.COM)}
+\textbf{Problem Statement:} \\
+Design a series of three HTML Pages for ABC.COM, each called from the previous one. Accept Name on the first page. When the user clicks on the enter button, second page should open. The second page should not display the name but a 'Welcome screen with some information about ABC.COM. When the user will click on the 'next' button it should display the name accepted in page 1 on page 3. (Hint: you may use hidden fields)
+
+\begin{lstlisting}[language=HTML, caption={Page 1 (page1.html): Accept Name}]
+<!DOCTYPE html>
+<html>
+<head><title>ABC.COM - Page 1</title></head>
+<body>
+    <h1>ABC.COM</h1>
+    <!-- Form submits to page2.html via GET to pass data without a backend -->
+    <form action="page2.html" method="get">
+        <label>Enter Name:</label>
+        <input type="text" name="username" required>
+        <input type="submit" value="Enter">
+    </form>
+</body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption={Page 2 (page2.html): Welcome Screen with Hidden Field}]
+<!DOCTYPE html>
+<html>
+<head><title>ABC.COM - Page 2</title></head>
+<body>
+    <h1>Welcome to ABC.COM!</h1>
+    <p>ABC.COM is a leading company in web technologies and software engineering.</p>
+    
+    <form action="page3.html" method="get">
+        <!-- Hidden field to carry forward the name -->
+        <input type="hidden" name="username" id="hiddenName">
+        <input type="submit" value="Next">
+    </form>
+
+    <script>
+        // Extract the 'username' from the URL parameters
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('hiddenName').value = params.get('username') || '';
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption={Page 3 (page3.html): Display Final Name}]
+<!DOCTYPE html>
+<html>
+<head><title>ABC.COM - Page 3</title></head>
+<body>
+    <h1>ABC.COM - Dashboard</h1>
+    <h2 id="greeting"></h2>
+
+    <script>
+        // Retrieve the name passed from Page 2's hidden field
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('username') || 'Guest';
+        document.getElementById('greeting').innerText = "Hello, " + name + "!";
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% QUESTION 4
+% ---------------------------------------------------------
+\subsection{JavaScript Confirm Greeting}
+\textbf{Problem Statement:} \\
+Write the segment of Script that would ask the user if he wants a greeting message and if he does, display a Gif file called Welcome.gif and display "Welcome to Department of Computer Science!" in the document window following the Gif.
+
+\begin{lstlisting}[language=HTML, caption={Conditional Greeting Script}]
+<!DOCTYPE html>
+<html>
+<head><title>Greeting Page</title></head>
+<body>
+    <script>
+        // Ask the user using confirm()
+        if (confirm("Do you want a greeting message?")) {
+            // If true, write the GIF and text to the document
+            document.write('<img src="Welcome.gif" alt="Welcome Image"><br><br>');
+            document.write('<h2>Welcome to Department of Computer Science!</h2>');
+        } else {
+            document.write('<h2>Goodbye!</h2>');
+        }
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 07 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 07}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 07}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Data Science and Pandas}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To create and manipulate Pandas Series and DataFrames
+    \item To perform basic data frame operations
+    \item To identify and handle missing values in datasets
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Create Pandas Series and DataFrames
+    \item Load data from CSV files
+    \item Access and explore DataFrame structure
+    \item Design comprehensive forms with multiple input types
+\end{itemize}
+
+\subsection{Loading and Exploring CSV Datasets}
+\textbf{Problem Statement:} \\
+Load a CSV file and display the first five rows and display head, tail, and info of a dataset.
+
+\begin{lstlisting}[language=Python, caption={Load and explore a CSV file}]
+import pandas as pd
+
+# Assuming 'data.csv' is present in the directory
+df = pd.read_csv('data.csv')
+
+print("--- First 5 rows (head) ---")
+print(df.head())
+
+print("\n--- Last 5 rows (tail) ---")
+print(df.tail())
+
+print("\n--- Dataset Info ---")
+df.info()
+\end{lstlisting}
+
+\subsection{DataFrame Operations}
+\textbf{Problem Statement:} \\
+Take a DataFrame and do the following:
+\begin{itemize}
+    \item What is the average value of the second column?
+    \item What is the average value of the first 5 rows of the third and fourth columns?
+    \item Compute the row wise sum of all possible values in an array.
+    \item Find the maximum of average value in each row.
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption={DataFrame statistical operations}]
+import pandas as pd
+import numpy as np
+
+# Create a sample DataFrame of 10 rows and 5 columns
+np.random.seed(42)
+df = pd.DataFrame(np.random.randint(1, 100, size=(10, 5)), columns=['A', 'B', 'C', 'D', 'E'])
+print(f"Sample DataFrame:\n{df}\n")
+
+# 1. Average value of the second column (Column 'B')
+avg_second_col = df.iloc[:, 1].mean()
+print(f"Average value of second column: {avg_second_col}")
+
+# 2. Average value of the first 5 rows of the third and fourth columns (Cols 'C' and 'D')
+avg_first_5_cols_3_4 = df.iloc[:5, 2:4].mean()
+print(f"Average of first 5 rows of 3rd and 4th columns:\n{avg_first_5_cols_3_4}")
+
+# 3. Compute row-wise sum
+row_wise_sum = df.sum(axis=1)
+print(f"\nRow-wise sum:\n{row_wise_sum}")
+
+# 4. Find the maximum of average value in each row
+max_avg_row = df.mean(axis=1).max()
+print(f"\nMaximum average value in each row: {max_avg_row}")
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Sample DataFrame:
+    A   B   C   D   E
+0  52  93  15  72  61
+1  21  83  87  75  75
+2  88  24   3  22  53
+3   2  88  30  38   2
+4  64  60  21  33  76
+5  58  22  89  49  91
+6  59  42  92  60  80
+7  15  62  62  47  62
+8  51  55  64   3  51
+9   7  21  73  39  18
+
+Average value of second column: 55.0
+Average of first 5 rows of 3rd and 4th columns:
+C    31.2
+D    48.0
+dtype: float64
+
+Row-wise sum:
+0    293
+1    341
+2    190
+3    160
+4    254
+5    309
+6    333
+7    248
+8    224
+9    158
+dtype: int64
+
+Maximum average value in each row: 68.2
+\end{lstlisting}
+
+
+\section{Problems Based on HTML and JavaScript}
+
+\subsection{Image Rollover (Mouse Hover)}
+\textbf{Problem Statement:} \\
+Create a Web page using two image files, which switch between one another as the mouse pointer moves over the image. Use the On Mouse over and On Mouse out event handler.
+
+\begin{lstlisting}[language=HTML, caption={Interactive image switching}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Switcher</title>
+</head>
+<body>
+    <h2>Hover over the image to switch it</h2>
+    
+    <!-- We use 'onmouseover' to change the image URL and 'onmouseout' to revert it -->
+    <img src="image1.jpg" id="switcherImg"
+         onmouseover="this.src='image2.jpg';"
+         onmouseout="this.src='image1.jpg';" 
+         alt="Interactive Image">
+         
+</body>
+</html>
+\end{lstlisting}
+
+\subsection{Date Script (Day of Week)}
+\textbf{Problem Statement:} \\
+Use the date function gets Date \& set Date to prompt the user for an integer between 1 - 31 \& return day of the week it represents.
+
+\begin{lstlisting}[language=HTML, caption={JavaScript Date manipulation}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day of the Week</title>
+</head>
+<body>
+    <script>
+        // Prompt user for a date
+        let userInput = prompt("Enter an integer between 1 and 31:");
+        let dateNum = parseInt(userInput);
+        
+        if (dateNum >= 1 && dateNum <= 31) {
+            let d = new Date();
+            
+            // Set the date to the user's input
+            d.setDate(dateNum);
+            
+            // Array of weekdays
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            
+            // Get the day of the week 
+            document.write("<h3>The day of the week for date " + dateNum + " is: " + days[d.getDay()] + "</h3>");
+        } else {
+            document.write("<h3>Invalid input. Please refresh and enter a number between 1 and 31.</h3>");
+        }
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 08 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 08}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 08}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Data Manipulation and Advanced Web Forms}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To rename columns and modify data types
+    \item To filter data based on conditions
+    \item To design complex HTML forms with JavaScript integration
+    \item To develop advanced web page enhancements
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Identify missing values and their patterns
+    \item Create interactive web pages with advanced effects
+    \item Modify DataFrame structure and data types
+    \item Filter and subset data efficiently
+\end{itemize}
+
+\subsection{Renaming Columns and Changing Data Types}
+\textbf{Problem Statement:} \\
+Rename columns of the datasets and change their data types.
+
+\begin{lstlisting}[language=Python, caption={Rename Columns and Modify Data Types}]
+import pandas as pd
+
+def main():
+    # Create a sample DataFrame
+    data = {'col1': [1, 2, 3], 'col2': ['4', '5', '6']}
+    df = pd.DataFrame(data)
+
+    print("Original DataFrame:\n", df)
+    print("\nOriginal Data Types:\n", df.dtypes)
+
+    # Rename columns
+    df = df.rename(columns={'col1': 'ID', 'col2': 'Score'})
+
+    # Change data type of 'Score' from object (string) to int
+    df['Score'] = df['Score'].astype(int)
+
+    print("\nModified DataFrame:\n", df)
+    print("\nModified Data Types:\n", df.dtypes)
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Original DataFrame:
+    col1 col2
+0     1    4
+1     2    5
+2     3    6
+
+Original Data Types:
+ col1     int64
+col2    object
+dtype: object
+
+Modified DataFrame:
+    ID  Score
+0   1      4
+1   2      5
+2   3      6
+
+Modified Data Types:
+ ID       int64
+Score    int64
+dtype: object
+\end{lstlisting}
+
+
+\subsection{Filtering Data Based on Conditions}
+\textbf{Problem Statement:} \\
+Filter rows and columns based on specific conditions (such as remove rows with missing values, if value is less than 50 etc.).
+
+\begin{lstlisting}[language=Python, caption={Filtering Data and Handling Missing Values}]
+import pandas as pd
+import numpy as np
+
+def main():
+    # Create a sample DataFrame with missing values and various numbers
+    data = {
+        'A': [85, 45, np.nan, 90, 60],
+        'B': [75, 55, 60, 95, 20],
+        'C': [70, 85, 40, np.nan, 99]
+    }
+    df = pd.DataFrame(data)
+
+    print("Original DataFrame:\n", df)
+
+    # 1. Remove rows with any missing values
+    df_no_missing = df.dropna()
+    print("\nDataFrame after removing missing values:\n", df_no_missing)
+
+    # 2. Filter rows where value in column 'A' is greater than or equal to 50
+    df_filtered = df_no_missing[df_no_missing['A'] >= 50]
+    print("\nDataFrame applying condition (A >= 50):\n", df_filtered)
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Original DataFrame:
+       A   B     C
+0  85.0  75  70.0
+1  45.0  55  85.0
+2   NaN  60  40.0
+3  90.0  95   NaN
+4  60.0  20  99.0
+
+DataFrame after removing missing values:
+       A   B     C
+0  85.0  75  70.0
+1  45.0  55  85.0
+4  60.0  20  99.0
+
+DataFrame applying condition (A >= 50):
+       A   B     C
+0  85.0  75  70.0
+4  60.0  20  99.0
+\end{lstlisting}
+
+
+\section{Problems based on HTML and JavaScript}
+
+\subsection{Digital Clock}
+\textbf{Problem Statement:} \\
+Using JavaScript create a digital clock.
+
+\begin{lstlisting}[language=HTML, caption={JavaScript Digital Clock}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        .clock {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 48px;
+            color: #333;
+            text-align: center;
+            margin-top: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="clock" id="digitalClock"></div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            // Format time to strictly 2 digits
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            
+            const timeString = hours + ':' + minutes + ':' + seconds;
+            document.getElementById('digitalClock').textContent = timeString;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        
+        // Initialize the clock immediately
+        updateClock();
+    </script>
+</body>
+</html>
+\end{lstlisting}
+
+\subsection{Stylized Form Design}
+\textbf{Problem Statement:} \\
+Design a form as shown below.
+
+\begin{lstlisting}[language=HTML, caption={Styled HTML Details Form}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details Form</title>
+    <style>
+        body { font-family: "Times New Roman", Times, serif; }
+        .form-container { width: 500px; margin: 50px auto; }
+        
+        h2 {
+            text-align: center;
+            color: #1a428a; /* Deep blue matching the image */
+            text-decoration: underline;
+        }
+        
+        table { width: 100%; border-collapse: separate; border-spacing: 0 15px; }
+        
+        td.label {
+            color: #2b5f9e; /* Muted blue for labels */
+            width: 30%;
+            vertical-align: top;
+            padding-top: 5px;
+        }
+        
+        input[type="text"], textarea {
+            width: 100%;
+            border: 2px inset #ddd; /* Match the 'inset' style from the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Details</h2>
+        <form>
+            <table>
+                <tr>
+                    <td class="label">Your Name:</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td class="label">Your Address:</td>
+                    <td><input type="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td class="label">Your Gender:</td>
+                    <td>
+                        <span style="color: #2b5f9e;">Male</span> 
+                        <input type="radio" name="gender" value="male"> 
+                        <span style="color: #2b5f9e;">Female</span> 
+                        <input type="radio" name="gender" value="female" checked>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Your Country:</td>
+                    <td>
+                        <select name="country">
+                            <option value="India">India</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">Your Opinion:</td>
+                    <td><textarea name="opinion" rows="5"></textarea></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 09 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 09}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 09}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Exploratory Data Analysis and CSS}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To perform comprehensive exploratory data analysis
+    \item To identify and handle outliers
+    \item To compute correlations between features
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Generate and interpret summary statistics
+    \item Identify correlations and remove highly correlated features
+    \item Detect and handle outliers appropriately
+    \item Perform complete EDA workflow
+    \item Perform CSS to HTML.
+\end{itemize}
+
+\subsection{Boxplots and Outlier Handling}
+\textbf{Problem Statement:} \\
+Draw boxplots, identify outliers and remove them.
+
+\begin{lstlisting}[language=Python, caption={Generating boxplots and filtering outliers}]
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def handle_outliers():
+    print("--- 1. Generating Data ---")
+    np.random.seed(10)
+    data = np.random.normal(50, 10, 200).tolist()
+    data.extend([150, 160, -20, -30]) # Inject outliers intentionally
+    df = pd.DataFrame({'Value': data})
+
+    # Plot original boxplot
+    plt.figure(figsize=(8, 4))
+    sns.boxplot(x=df['Value'])
+    plt.title('Boxplot Before Removing Outliers')
+    plt.savefig('boxplot_before.png')
+
+    print("\n--- 2. Identifying Outliers (IQR Method) ---")
+    Q1 = df['Value'].quantile(0.25)
+    Q3 = df['Value'].quantile(0.75)
+    IQR = Q3 - Q1
+    lower_bound = Q1 - 1.5 * IQR
+    upper_bound = Q3 + 1.5 * IQR
+
+    outliers = df[(df['Value'] < lower_bound) | (df['Value'] > upper_bound)]
+    print(f"Number of outliers detected: {len(outliers)}")
+    print(outliers)
+
+    print("\n--- 3. Removing Outliers ---")
+    df_clean = df[(df['Value'] >= lower_bound) & (df['Value'] <= upper_bound)]
+    print(f"Cleaned dataset shape: {df_clean.shape}")
+
+    # Plot cleaned boxplot
+    plt.figure(figsize=(8, 4))
+    sns.boxplot(x=df_clean['Value'])
+    plt.title('Boxplot After Removing Outliers')
+    plt.savefig('boxplot_after.png')
+
+if __name__ == "__main__":
+    handle_outliers()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- 1. Generating Data ---
+
+--- 2. Identifying Outliers (IQR Method) ---
+Number of outliers detected: 8
+          Value
+75    74.676511
+123   74.653251
+159   20.204032
+164   27.048967
+200  150.000000
+201  160.000000
+202  -20.000000
+203  -30.000000
+
+--- 3. Removing Outliers ---
+Cleaned dataset shape: (196, 1)
+\end{lstlisting}
+
+
+\subsection{Comprehensive Exploratory Data Analysis (EDA)}
+\textbf{Problem Statement:} \\
+Perform all EDA operations on a dataset.
+
+\begin{lstlisting}[language=Python, caption={EDA implementation using Pandas and Seaborn}]
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def perform_eda():
+    # Load built-in seaborn dataset 'titanic'
+    print("--- Loading Dataset (Titanic) ---")
+    df = sns.load_dataset('titanic')
+
+    print("\n--- 1. Summary Statistics ---")
+    print(df.describe())
+
+    print("\n--- 2. Dataset Info ---")
+    print(df.info())
+
+    print("\n--- 3. Missing Values Check ---")
+    print(df.isnull().sum())
+
+    print("\n--- 4. Correlation Matrix ---")
+    # Select only numeric columns for correlation matrix
+    numeric_df = df.select_dtypes(include=['float64', 'int64'])
+    corr_matrix = numeric_df.corr()
+    print(corr_matrix)
+
+    # Plot heatmap
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
+    plt.title('Correlation Heatmap')
+    plt.tight_layout()
+    plt.savefig('correlation_heatmap.png')
+
+if __name__ == "__main__":
+    perform_eda()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- Loading Dataset (Titanic) ---
+
+--- 1. Summary Statistics ---
+         survived      pclass         age       sibsp       parch        fare
+count  891.000000  891.000000  714.000000  891.000000  891.000000  891.000000
+mean     0.383838    2.308642   29.699118    0.523008    0.381594   32.204208
+std      0.486592    0.836071   14.526497    1.102743    0.806057   49.693429
+min      0.000000    1.000000    0.420000    0.000000    0.000000    0.000000
+25%      0.000000    2.000000   20.125000    0.000000    0.000000    7.910400
+50%      0.000000    3.000000   28.000000    0.000000    0.000000   14.454200
+75%      1.000000    3.000000   38.000000    1.000000    0.000000   31.000000
+max      1.000000    3.000000   80.000000    8.000000    6.000000  512.329200
+
+--- 2. Dataset Info ---
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 15 columns):
+ #   Column       Non-Null Count  Dtype   
+---  ------       --------------  -----   
+ 0   survived     891 non-null    int64   
+ 1   pclass       891 non-null    int64   
+ 2   sex          891 non-null    object  
+ 3   age          714 non-null    float64 
+ 4   sibsp        891 non-null    int64   
+ 5   parch        891 non-null    int64   
+ 6   fare         891 non-null    float64 
+ 7   embarked     889 non-null    object  
+ 8   class        891 non-null    category
+ 9   who          891 non-null    object  
+ 10  adult_male   891 non-null    bool    
+ 11  deck         203 non-null    category
+ 12  embark_town  889 non-null    object  
+ 13  alive        891 non-null    object  
+ 14  alone        891 non-null    bool    
+dtypes: bool(2), category(2), float64(2), int64(4), object(5)
+memory usage: 80.7+ KB
+None
+
+--- 3. Missing Values Check ---
+survived         0
+pclass           0
+sex              0
+age            177
+sibsp            0
+parch            0
+fare             0
+embarked         2
+class            0
+who              0
+adult_male       0
+deck           688
+embark_town      2
+alive            0
+alone            0
+dtype: int64
+
+--- 4. Correlation Matrix ---
+          survived    pclass       age     sibsp     parch      fare
+survived  1.000000 -0.338481 -0.077221 -0.035322  0.081629  0.257307
+pclass   -0.338481  1.000000 -0.369226  0.083081  0.018443 -0.549500
+age      -0.077221 -0.369226  1.000000 -0.308247 -0.189119  0.096067
+sibsp    -0.035322  0.083081 -0.308247  1.000000  0.414838  0.159651
+parch     0.081629  0.018443 -0.189119  0.414838  1.000000  0.216225
+fare      0.257307 -0.549500  0.096067  0.159651  0.216225  1.000000
+\end{lstlisting}
+
+
+\section{Problems based on HTML and CSS}
+
+\subsection{Unequal Frames with Validated Forms}
+\textbf{Problem Statement:} \\
+Create a website that divides the Web page into two unequal frames. In Frame One, there are two links to two different forms. The forms are validated on submitting and the result is shown at the bottom of the same page. Use CSS for formatting.
+
+\begin{lstlisting}[language=HTML, caption={index.html: Creating unequal frames}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Unequal Frames</title>
+</head>
+<!-- Divides the window into left (30%) and right (70%) unequal frames -->
+<frameset cols="30%, 70%">
+    <frame src="frame1.html" name="menuFrame">
+    <frame src="form1.html" name="contentFrame">
+</frameset>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption={frame1.html: Navigation Links}]
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial; background-color: #f4f4f9; padding: 20px; }
+        a { 
+            display: block; margin-bottom: 15px; padding: 10px; 
+            background-color: #007bff; color: white; 
+            text-decoration: none; text-align: center; border-radius: 5px; 
+        }
+        a:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+    <h2>Menu</h2>
+    <!-- Targets the right-side frame -->
+    <a href="form1.html" target="contentFrame">Registration Form</a>
+    <a href="form2.html" target="contentFrame">Feedback Form</a>
+</body>
+</html>
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML, caption={form1.html: Styled Form with JS Validation (Result appends below)}]
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; text-align: center;}
+        .form-box { 
+            border: 1px solid #ccc; padding: 20px; 
+            border-radius: 8px; width: 60%; margin: 0 auto; 
+            background: #fff; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); 
+        }
+        input { display: block; margin: 10px auto; width: 90%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        #result { margin-top: 20px; color: blue; font-weight: bold; font-size: 1.2em; }
+    </style>
+    <script>
+        function validateRegistration(e) {
+            e.preventDefault(); // Stop page reload
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let resultDiv = document.getElementById("result");
+            
+            if(name.trim() === "" || email.trim() === "") {
+                resultDiv.style.color = "red";
+                resultDiv.innerText = "Error: Name and Email fields cannot be empty!";
+            } else {
+                resultDiv.style.color = "green";
+                resultDiv.innerText = "Registration Configured for: " + name + " (" + email + ")";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="form-box">
+        <h3>Registration Form</h3>
+        <form onsubmit="validateRegistration(event)">
+            <input type="text" id="name" placeholder="Enter Full Name">
+            <input type="email" id="email" placeholder="Enter Email Address">
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+    <!-- Result prints here on the same page -->
+    <div id="result"></div>
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 10 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 10}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 10}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Data Visualization and Interactive Web Actions}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To create various types of plots using Matplotlib and Seaborn
+    \item To visualize feature relationships
+    \item To generate correlation heatmaps
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Create line plots, bar plots, and histograms
+    \item Generate boxplots and scatter plots
+    \item Interpret correlation heatmaps
+    \item Create publication-quality visualizations
+\end{itemize}
+
+\subsection{Matplotlib Data Visualizations}
+\textbf{Problem Statement:} \\
+Read a dataset and create different line and bar plots using Matplotlib.
+
+\begin{lstlisting}[language=Python, caption={Line and Bar Plots with Matplotlib}]
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def create_plots():
+    # 1. Create a sample dataset
+    data = {
+        'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        'Sales': [150, 200, 180, 220, 250, 230],
+        'Expenses': [100, 120, 150, 170, 160, 190]
+    }
+    df = pd.DataFrame(data)
+    print("Dataset loaded:\n", df)
+
+    # 2. Create a Line Plot
+    plt.figure(figsize=(10, 5))
+    plt.plot(df['Month'], df['Sales'], marker='o', color='blue', label='Sales')
+    plt.plot(df['Month'], df['Expenses'], marker='s', color='red', label='Expenses')
+    plt.title('Monthly Sales vs Expenses (Line Plot)')
+    plt.xlabel('Month')
+    plt.ylabel('Amount ($)')
+    plt.legend()
+    plt.grid(True)
+    plt.savefig('line_plot.png')
+    plt.close()
+
+    # 3. Create a Bar Plot
+    plt.figure(figsize=(10, 5))
+    x = range(len(df['Month']))
+    width = 0.4
+
+    plt.bar([i - width/2 for i in x], df['Sales'], width=width, color='skyblue', label='Sales')
+    plt.bar([i + width/2 for i in x], df['Expenses'], width=width, color='salmon', label='Expenses')
+    
+    plt.xticks(x, df['Month'])
+    plt.title('Monthly Sales vs Expenses (Bar Plot)')
+    plt.xlabel('Month')
+    plt.ylabel('Amount ($)')
+    plt.legend()
+    plt.savefig('bar_plot.png')
+    plt.close()
+
+if __name__ == "__main__":
+    create_plots()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Dataset loaded:
+   Month  Sales  Expenses
+0   Jan    150       100
+1   Feb    200       120
+2   Mar    180       150
+3   Apr    220       170
+4   May    250       160
+5   Jun    230       190
+\end{lstlisting}
+
+
+\subsection{Seaborn Relationships and Heatmaps}
+\textbf{Problem Statement:} \\
+Create scatter plots for feature relationships and generate a correlation heatmap.
+
+\begin{lstlisting}[language=Python, caption={Generating scatter plots and correlation heatmaps}]
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+def create_scatter_and_heatmap():
+    # 1. Load built-in seaborn dataset 'iris'
+    print("--- Loading Dataset (Iris) ---")
+    df = sns.load_dataset('iris')
+      print("\nFirst 5 rows of Iris:")
+      print(df.head())
+
+      # 2. Create a Scatter Plot for feature relationships
+      plt.figure(figsize=(8, 6))
+      sns.scatterplot(data=df, x='sepal_length', y='petal_length', hue='species', style='species', s=100)
+      plt.title('Scatter Plot: Sepal Length vs Petal Length')
+      plt.savefig('scatter_plot.png')
+      plt.close()
+
+      # 3. Generate a Correlation Heatmap
+      # Extract only numeric columns for correlation computation
+      numeric_df = df.select_dtypes(include=['float64', 'int64'])
+      corr_matrix = numeric_df.corr()
+      print("\nCorrelation Matrix:")
+      print(corr_matrix)
+
+      plt.figure(figsize=(8, 6))
+      sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', vmin=-1, vmax=1, linewidths=0.5)
+      plt.title('Feature Correlation Heatmap')
+      plt.tight_layout()
+      plt.savefig('correlation_heatmap_w10.png')
+      plt.close()
+
+  if __name__ == "__main__":
+      create_scatter_and_heatmap()
+  \end{lstlisting}
+  \vspace{0.5cm}
+  \textbf{Output:}
+  \begin{lstlisting}[language=bash]
+--- Loading Dataset (Iris) ---
+
+First 5 rows of Iris:
+   sepal_length  sepal_width  petal_length  petal_width species
+0           5.1          3.5           1.4          0.2  setosa
+1           4.9          3.0           1.4          0.2  setosa
+2           4.7          3.2           1.3          0.2  setosa
+3           4.6          3.1           1.5          0.2  setosa
+4           5.0          3.6           1.4          0.2  setosa
+
+Correlation Matrix:
+              sepal_length  sepal_width  petal_length  petal_width
+sepal_length      1.000000    -0.117570      0.871754     0.817941
+sepal_width      -0.117570     1.000000     -0.428440    -0.366126
+petal_length      0.871754    -0.428440      1.000000     0.962865
+petal_width       0.817941    -0.366126      0.962865     1.000000
+\section{Problems based on HTML and JavaScript and CSS}
+
+\subsection{Interactive Web Page Elements}
+\textbf{Problem Statement:} \\
+Develop a Web page with the following enhancements:
+\begin{itemize}
+    \item A rollover effect, where an image changes if the user places the mouse over it.
+    \item An animation that occurs in response to the user clicking on an image.
+    \item A pull-down menu with each option linking to a specific page.
+\end{itemize}
+
+\begin{lstlisting}[language=HTML, caption={Interactive HTML/JS Actions (Rollover, Click Animation, Navigation Menu)}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Enhancements</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { margin: 20px; }
+        img { width: 300px; height: 200px; transition: transform 0.5s; cursor: pointer; border-radius: 8px;}
+        select { padding: 10px; font-size: 16px; margin-top: 20px; cursor: pointer; }
+        
+        /* CSS Animation Class assigned via JS */
+        .animating-image {
+            animation: shake 0.5s;
+            animation-iteration-count: 2;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            25% { transform: translate(-3px, 0px) rotate(-5deg); }
+            50% { transform: translate(2px, 2px) rotate(5deg); }
+            75% { transform: translate(-1px, -2px) rotate(-2deg); }
+            100% { transform: translate(1px, -1px) rotate(0deg); }
+        }
+    </style>
+    <script>
+        function animateImage(el) {
+            // Adds and removes the animation class so it can be re-triggered
+            el.classList.add('animating-image');
+            setTimeout(() => {
+                el.classList.remove('animating-image');
+            }, 1000);
+        }
+        
+        function navigateMenu(selectObj) {
+            let url = selectObj.value;
+            if (url) {
+                // Opens the specific page
+                window.open(url, "_blank");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Interactive Web Enhancements</h2>
+    
+    <div class="container">
+        <h3>1. Rollover Effect (Hover) & 2. Animation (Click)</h3>
+        <!-- Image changes on hover (Rollover) and animates on click -->
+        <img id="myImage" 
+             src="https://placehold.co/300x200/00008B/FFF?text=Hover+Me" 
+             onmouseover="this.src='https://placehold.co/300x200/B22222/FFF?text=Click+Me';"
+             onmouseout="this.src='https://placehold.co/300x200/00008B/FFF?text=Hover+Me';"
+             onclick="animateImage(this)" 
+             alt="Dynamic Image">
+    </div>
+
+    <div class="container">
+        <h3>3. Pull-Down Navigation Menu</h3>
+        <!-- Select box acting as a navigational pull-down list -->
+        <select onchange="navigateMenu(this)">
+            <option value="">-- Choose a Destination --</option>
+            <option value="https://www.google.com">Search Engine (Google)</option>
+            <option value="https://www.github.com">Code Repository (GitHub)</option>
+            <option value="https://www.wikipedia.org">Knowledge Base (Wikipedia)</option>
+        </select>
+    </div>
+
+</body>
+</html>
+\end{lstlisting}
+
+\subsection{Dynamic Yearly Calendar (JS Prompt)}
+\textbf{Problem Statement:} \\
+Display the calendar using JAVA SCRIPT code by getting the year from the user.
+
+\begin{lstlisting}[language=HTML, caption={Dynamic Matrix Calendar generation using JavaScript Date Functions}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Yearly Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .month-container { display: inline-block; margin: 15px; border: 1px solid #aaa; padding: 10px; background: #fafafa; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); width: 280px; }
+        .month-name { background: #333; color: white; padding: 5px; margin: -10px -10px 10px -10px; font-weight: bold; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #ddd; padding: 5px; font-size: 14px;}
+        td { border: 1px solid #eee; padding: 8px; text-align: center; background: white;}
+        td.empty { background: transparent; border: none; }
+    </style>
+</head>
+<body>
+
+    <h2 id="calTitle">Javascript Yearly Calendar</h2>
+    <div id="calendarArea"></div>
+
+    <script>
+        // 1. Prompt user for year
+        let inputYear = prompt("Enter a year to print its calendar (e.g. 2026):", "2026");
+        let year = parseInt(inputYear);
+
+        if (!isNaN(year)) {
+            document.getElementById("calTitle").innerText = "Calendar for the Year " + year;
+            generateCalendar(year);
+        } else {
+            document.getElementById("calTitle").innerText = "Invalid Year Entered. Please Refresh.";
+        }
+
+        // 2. Generate Calendar Logic
+        function generateCalendar(y) {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+            let calendarHTML = "";
+
+            for (let m = 0; m < 12; m++) {
+                calendarHTML += `<div class="month-container"><div class="month-name">${months[m]} ${y}</div><table><tr>`;
+                
+                // Add Headers representing days of the week
+                for (let d = 0; d < 7; d++) {
+                    calendarHTML += `<th>${daysOfWeek[d]}</th>`;
+                }
+                calendarHTML += `</tr><tr>`;
+
+                // Calculate the start day of the week for the specific month (0 = Sunday, etc.)
+                let firstDay = new Date(y, m, 1).getDay();
+                // Number of days in the current month (calculated by using the 0th day of the *next* month)
+                let daysInMonth = new Date(y, m + 1, 0).getDate();
+
+                let dayCount = 1;
+                
+                // Print Empty table boxes for days falling before the 1st
+                for (let i = 0; i < firstDay; i++) {
+                    calendarHTML += `<td class="empty"></td>`;
+                }
+
+                // Add grid squares for standard days
+                for (let i = firstDay; i < 7; i++) {
+                    calendarHTML += `<td>${dayCount}</td>`;
+                    dayCount++;
+                }
+                calendarHTML += `</tr>`;
+
+                // Calculate and build subsequent weeks for the month
+                while (dayCount <= daysInMonth) {
+                    calendarHTML += `<tr>`;
+                    for (let i = 0; i < 7; i++) {
+                        if (dayCount <= daysInMonth) {
+                            calendar(continuation) 
+                            calendarHTML += `<td>${dayCount}</td>`;
+                            dayCount++;
+                        } else {
+                            calendarHTML += `<td class="empty"></td>`;
+                        }
+                    }
+                    calendarHTML += `</tr>`;
+                }
+                calendarHTML += `</table></div>`;
+            }
+
+            // Append all constructed tables to the DOM
+            document.getElementById("calendarArea").innerHTML = calendarHTML;
+        }
+    </script>
+
+</body>
+</html>
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 11 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 11}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 11}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Model Training, Regression, and JavaScript Windows}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To split data into training and testing sets
+    \item To evaluate regression model performance
+    \item To implement classification models
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Prepare data for model training
+    \item Implement linear regression from scratch or using Scikit-learn
+    \item Evaluate regression models using appropriate metrics
+    \item Implement basic classification models
+\end{itemize}
+
+\subsection{Splitting Datasets for Training and Testing}
+\textbf{Problem Statement:} \\
+Read a dataset and split a dataset into training and testing sets.
+
+\begin{lstlisting}[language=Python, caption={Splitting datasets dynamically (X\_train, y\_test)}]
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_diabetes
+
+def main():
+    print("--- Loading Dataset ---")
+    data = load_diabetes(as_frame=True)
+    df = data.frame
+    
+    print(f"Original dataset shape: {df.shape}")
+    
+    # Define features (X) and target (y)
+    X = df.drop(columns=['target'])
+    y = df['target']
+    
+    # Split the dataset into training (80%) and testing (20%) sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
+    print("\n--- Data Splitting Results ---")
+    print(f"Training features (X_train) shape: {X_train.shape}")
+    print(f"Testing features (X_test) shape: {X_test.shape}")
+    print(f"Training target (y_train) shape: {y_train.shape}")
+    print(f"Testing target (y_test) shape: {y_test.shape}")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- Loading Dataset ---
+Original dataset shape: (442, 11)
+
+--- Data Splitting Results ---
+Training features (X_train) shape: (353, 10)
+Testing features (X_test) shape: (89, 10)
+Training target (y_train) shape: (353,)
+Testing target (y_test) shape: (89,)
+\end{lstlisting}
+
+\subsection{Evaluating Regression Models}
+\textbf{Problem Statement:} \\
+Evaluate regression performance using MAE and RMSE. and visualize actual vs predicted values.
+
+\begin{lstlisting}[language=Python, caption={Evaluating MAE/RMSE properly and visualizing actual vs predicted arrays}]
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
+from sklearn.datasets import load_diabetes
+
+def main():
+    print("--- Loading and Splitting Dataset ---")
+    data = load_diabetes(as_frame=True)
+    df = data.frame
+    
+    X = df.drop(columns=['target'])
+    y = df['target']
+    
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    
+    # 1. Initialize and train the Linear Regression model
+    print("\n--- Training Model ---")
+    model = LinearRegression()
+    model.fit(X_train, y_train)
+    
+    # 2. Predict on test set
+    y_pred = model.predict(X_test)
+    
+    # 3. Evaluate Performance (MAE and RMSE)
+    mae = mean_absolute_error(y_test, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    
+    print("\n--- Regression Performance Metrics ---")
+    print(f"Mean Absolute Error (MAE): {mae:.2f}")
+    print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
+    
+    # 4. Visualize Actual vs Predicted
+    plt.figure(figsize=(8, 6))
+    plt.scatter(y_test, y_pred, color='blue', alpha=0.6, label='Predictions')
+    
+    # Perfect prediction line (y=x)
+    max_val = max(np.max(y_test), np.max(y_pred))
+    min_val = min(np.min(y_test), np.min(y_pred))
+    plt.plot([min_val, max_val], [min_val, max_val], color='red', linestyle='--', lw=2, label='Perfect Fit')
+    
+    plt.title('Actual vs Predicted Values (Linear Regression)')
+    plt.xlabel('Actual Target Values')
+    plt.ylabel('Predicted Target Values')
+    plt.legend()
+    plt.grid(True, linestyle=':', alpha=0.7)
+    
+    plt.savefig('actual_vs_predicted.png', dpi=300)
+    plt.close()
+    
+    print("\nPlot saved successfully as 'actual_vs_predicted.png'.")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- Loading and Splitting Dataset ---
+
+--- Training Model ---
+
+--- Regression Performance Metrics ---
+Mean Absolute Error (MAE): 42.79
+Root Mean Squared Error (RMSE): 53.85
+
+Plot saved successfully as 'actual_vs_predicted.png'.
+\end{lstlisting}
+
+\section{Problems Based on HTML, Java Script, XML}
+
+\subsection{JavaScript Window Handling (New Custom Contexts)}
+\textbf{Problem Statement:} \\
+Create a HTML file to open a new window from the current window using JavaScript.
+
+\begin{lstlisting}[language=HTML, caption={Creating New Local Document Window (Blank Contexts)}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Open New Window</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f4f4f9; }
+        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: inline-block; }
+        button { padding: 12px 24px; font-size: 16px; color: white; background-color: #007bff; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #0056b3; }
+    </style>
+    <script>
+        function openNewWindow() {
+            // Opens a new customized window from the current window
+            let childWindow = window.open("", "_blank", "width=400,height=300,left=200,top=200");
+            if (childWindow) {
+                childWindow.document.write(`
+                    <html>
+                    <head>
+                        <title>Child Window</title>
+                        <style>body { font-family: Arial, sans-serif; text-align: center; padding: 30px; } h2 { color: #28a745; }</style>
+                    </head>
+                    <body>
+                        <h2>Hello from the New Window!</h2>
+                        <p>This window was opened using JavaScript.</p>
+                        <button onclick="window.close()" style="padding: 10px; cursor: pointer;">Close Me</button>
+                    </body>
+                    </html>
+                `);
+            } else {
+                alert("Popup blocker might be enabled. Please allow popups for this site.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>JavaScript Window Handling</h2>
+        <p>Click the button below to open a new browser window context.</p>
+        <button onclick="openNewWindow()">Open New Window</button>
+    </div>
+</body>
+</html>
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Interactive Web Page / Rendered in Browser
+\end{lstlisting}
+
+\subsection{Combobox Populated Dynamic Calendars}
+\textbf{Problem Statement:} \\
+Create an HTML page with 2 combo box populated with month \& year, to display the calendar for the selected month \& year from combo box using JavaScript.
+
+\begin{lstlisting}[language=HTML, caption={Binding Combo Box Options strictly to JS Date Models dynamically}]
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Combobox Calendar</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; background: #fdfdfd; padding: 20px;}
+        .form-container { background: #fff; padding: 20px; border-radius: 8px; font-size: 16px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 350px; margin: auto; border: 1px solid #e1e1e1;}
+        .form-container select { padding: 8px; margin: 10px; font-size: 16px; border-radius: 4px; border: 1px solid #ccc;}
+        .form-container button { padding: 10px 20px; font-size: 16px; color: white; background-color: #007bff; border: none; border-radius: 4px; cursor: pointer; transition: 0.3s;}
+        .form-container button:hover { background-color: #0056b3; }
+        #calendarArea { margin-top: 30px; display: flex; justify-content: center; }
+        table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #ddd; }
+        th, td { padding: 12px; text-align: center; border: 1px solid #eee; }
+        th { background: #007bff; color: white; font-weight: 500; }
+        td { color: #333; }
+        td:not(.empty):hover { background: #f1f8ff; cursor: default; }
+        .empty { background: #f9f9f9; border: none;}
+        .cal-header { font-size: 20px; font-weight: bold; margin-bottom: 15px; color: #444; }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Select Calendar Date</h2>
+        <!-- 1. Two Comboboxes for Month and Year -->
+        <label for="monthSelect">Month:</label>
+        <select id="monthSelect">
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="9">October</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+        </select>
+        <br>
+        <label for="yearSelect">Year:</label>
+        <select id="yearSelect"></select>
+        <br>
+        <button onclick="displayCalendar()">Show Calendar</button>
+    </div>
+
+    <!-- Container for dynamic calendar rendering -->
+    <div id="calendarArea"></div>
+
+    <script>
+        // 2. Populate the 'Year' Combobox on page load dynamically
+        window.onload = function() {
+            let yearSelect = document.getElementById('yearSelect');
+            let currentYear = new Date().getFullYear();
+            // Populate years from currentYear-5 to currentYear+5
+            for (let i = currentYear - 5; i <= currentYear + 5; i++) {
+                let option = document.createElement("option");
+                option.value = i;
+                option.text = i;
+                if (i === currentYear) option.selected = true; // Default to current year
+                yearSelect.add(option);
+            }
+            // Set current month as default selected value
+            document.getElementById('monthSelect').value = new Date().getMonth();
+        };
+
+        // 3. Logic to display the calendar using selected Combobox values
+        function displayCalendar() {
+            let m = parseInt(document.getElementById('monthSelect').value);
+            let y = parseInt(document.getElementById('yearSelect').value);
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+            let calendarHTML = `<div style="width: 350px;">`;
+            calendarHTML += `<div class="cal-header">${months[m]} ${y}</div><table><tr>`;
+
+            // Table headers for days of the week
+            for (let d = 0; d < 7; d++) {
+                calendarHTML += `<th>${daysOfWeek[d]}</th>`;
+            }
+            calendarHTML += `</tr><tr>`;
+
+            let firstDay = new Date(y, m, 1).getDay();
+            let daysInMonth = new Date(y, m + 1, 0).getDate();
+            let dayCount = 1;
+
+            // Empty cells before the 1st day of the month
+            for (let i = 0; i < firstDay; i++) {
+                calendarHTML += `<td class="empty"></td>`;
+            }
+
+            // Fill standard days
+            for (let i = firstDay; i < 7; i++) {
+                calendarHTML += `<td>${dayCount}</td>`;
+                dayCount++;
+            }
+            calendarHTML += `</tr>`;
+
+            // Fill remaining weeks in the month
+            while (dayCount <= daysInMonth) {
+                calendarHTML += `<tr>`;
+                for (let i = 0; i < 7; i++) {
+                    if (dayCount <= daysInMonth) {
+                        calendarHTML += `<td>${dayCount}</td>`;
+                        dayCount++;
+                    } else {
+                        calendarHTML += `<td class="empty"></td>`;
+                    }
+                }
+                calendarHTML += `</tr>`;
+            }
+            
+            calendarHTML += `</table></div>`;
+            document.getElementById("calendarArea").innerHTML = calendarHTML;
+        }
+    </script>
+</body>
+</html>
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+Interactive Web Page / Rendered in Browser
+\end{lstlisting}
+
+% ---------------------------------------------------------
+% WEEK 12 STARTS HERE
+% ---------------------------------------------------------
+\newpage
+\fancyhead[R]{Week 12}
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{Week 12}} \\
+    \vspace{0.5cm}
+    \vspace{1cm}
+\end{center}
+
+\section{Classification and XML Styling Integration}
+
+\subsection*{Objectives}
+\begin{itemize}
+    \item To evaluate classification performance
+    \item To compare multiple classification algorithms
+    \item To work with XML and JavaScript
+    \item To create dynamic web pages
+\end{itemize}
+
+\subsection*{Outcomes}
+After completing this week, the students would be able to:
+\begin{itemize}
+    \item Generate and interpret confusion matrices
+    \item Calculate and interpret performance metrics
+    \item Compare different classification algorithms
+\end{itemize}
+
+\subsection{Classification Performance and Confusion Matrix}
+\textbf{Problem Statement:} \\
+Generate and interpret a confusion matrix. Calculate accuracy, precision, recall, and F1-score and visualize classification results.
+
+\begin{lstlisting}[language=Python, caption={Generating Confusion Matrices and Classification Reports}]
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.datasets import load_wine
+
+def main():
+    print("--- Loading Wine Dataset ---")
+    data = load_wine()
+    X = pd.DataFrame(data.data, columns=data.feature_names)
+    y = data.target
+
+    # Split dataset into training and testing sets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+    print("--- Training Logistic Regression Model ---")
+    model = LogisticRegression(max_iter=10000)
+    model.fit(X_train, y_train)
+
+    # Predict on test set
+    y_pred = model.predict(X_test)
+
+    print("\n--- Classification Performance Metrics ---")
+    print(f"Accuracy : {accuracy_score(y_test, y_pred):.4f}")
+    print(f"Precision: {precision_score(y_test, y_pred, average='weighted'):.4f}")
+    print(f"Recall   : {recall_score(y_test, y_pred, average='weighted'):.4f}")
+    print(f"F1-Score : {f1_score(y_test, y_pred, average='weighted'):.4f}")
+
+    print("\n--- Confusion Matrix ---")
+    cm = confusion_matrix(y_test, y_pred)
+    print(cm)
+    
+    print("\n--- Classification Report ---")
+    print(classification_report(y_test, y_pred, target_names=data.target_names))
+
+    # Visualize the confusion matrix
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=data.target_names, yticklabels=data.target_names)
+    plt.title('Confusion Matrix - Wine Dataset')
+    plt.xlabel('Predicted Class')
+    plt.ylabel('Actual Class')
+    plt.tight_layout()
+    plt.savefig('confusion_matrix_w12.png', dpi=300)
+    plt.close()
+    
+    print("\nVisualization saved successfully as 'confusion_matrix_w12.png'.")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- Loading Wine Dataset ---
+--- Training Logistic Regression Model ---
+
+--- Classification Performance Metrics ---
+Accuracy : 1.0000
+Precision: 1.0000
+Recall   : 1.0000
+F1-Score : 1.0000
+
+--- Confusion Matrix ---
+[[19  0  0]
+ [ 0 21  0]
+ [ 0  0 14]]
+
+--- Classification Report ---
+              precision    recall  f1-score   support
+
+     class_0       1.00      1.00      1.00        19
+     class_1       1.00      1.00      1.00        21
+     class_2       1.00      1.00      1.00        14
+
+    accuracy                           1.00        54
+   macro avg       1.00      1.00      1.00        54
+weighted avg       1.00      1.00      1.00        54
+
+Visualization saved successfully as 'confusion_matrix_w12.png'.
+\end{lstlisting}
+
+\subsection{Compare Classification Algorithms}
+\textbf{Problem Statement:} \\
+Use various classification models and compare them on the same datasets.
+
+\begin{lstlisting}[language=Python, caption={Iterating Over Classification Models and Accuracies}]
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
+from sklearn.datasets import load_wine
+
+def main():
+    print("--- Loading Wine Dataset for Model Comparison ---")
+    data = load_wine()
+    X = pd.DataFrame(data.data, columns=data.feature_names)
+    y = data.target
+
+    # Splitting data
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+    # Initialize a dictionary holding different classification models
+    models = {
+        "Logistic Regression": LogisticRegression(max_iter=10000),
+        "Decision Tree": DecisionTreeClassifier(random_state=42),
+        "Random Forest": RandomForestClassifier(random_state=42),
+        "Support Vector Machine": SVC()
+    }
+
+    print("\n--- Model Comparison on Test Set ---")
+    # Iterate through models to train and evaluate
+    for name, model in models.items():
+        model.fit(X_train, y_train)
+        predictions = model.predict(X_test)
+        acc = accuracy_score(y_test, predictions)
+        print(f"{name.ljust(25)} : Accuracy = {acc:.4f}")
+
+if __name__ == "__main__":
+    main()
+\end{lstlisting}
+\vspace{0.5cm}
+\textbf{Output:}
+\begin{lstlisting}[language=bash]
+--- Loading Wine Dataset for Model Comparison ---
+
+--- Model Comparison on Test Set ---
+Logistic Regression       : Accuracy = 1.0000
+Decision Tree             : Accuracy = 0.9630
+Random Forest             : Accuracy = 1.0000
+Support Vector Machine    : Accuracy = 0.7593
+\end{lstlisting}
+
+\section{Problems Based on HTML and XML}
+
+\subsection{CSS Integration with XML Files}
+\textbf{Problem Statement:} \\
+Create external style sheet and using the style sheet in XML file.
+
+\begin{lstlisting}[language=HTML, caption={Designing external week12\_prob3.css}]
+books {
+    display: block;
+    background-color: #f0f0f0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+book {
+    display: block;
+    background-color: #ffffff;
+    margin: 15px auto;
+    padding: 15px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    width: 60%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+title {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+author {
+    display: block;
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+price {
+    display: block;
+    font-size: 16px;
+    color: #28a745;
+    font-weight: bold;
+}
+\end{lstlisting}
+
+\begin{lstlisting}[language=XML, caption={Targeting the stylesheet directly out of week12\_prob3.xml}]
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="week12_prob3.css"?>
+<books>
+    <book>
+        <title>Web Engineering Design Principles</title>
+        <author>Dr. Jane Carter</author>
+        <price>$45.99</price>
+    </book>
+    <book>
+        <title>Advanced Data Science Algorithms</title>
+        <author>William B. Smith</author>
+        <price>$52.50</price>
+    </book>
+    <book>
+        <title>A Hybrid Cloud Architecture Guide</title>
+        <author>Anna Richards</author>
+        <price>$38.00</price>
+    </book>
+</books>
+\end{lstlisting}
+
+\subsection{XSL Transformation of XML to HTML Document}
+\textbf{Problem Statement:} \\
+Create an XSL style sheet to display the data in the xml using HTML table.
+
+\begin{lstlisting}[language=XML, caption={Executing an XSL file (week12\_prob4.xsl) matching tree logic}]
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="/">
+  <html>
+  <head>
+    <title>Employee Database Catalog</title>
+    <style>
+      body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f8f9fa; text-align: center; margin: 40px; }
+      table { width: 70%; margin: 20px auto; border-collapse: collapse; box-shadow: 0 0 10px rgba(0,0,0,0.1); background-color: white;}
+      th, td { border: 1px solid #ced4da; padding: 12px; text-align: center; }
+      th { background-color: #007bff; color: white; text-transform: uppercase; }
+      tr:hover { background-color: #f1f1f1; cursor: default; }
+      h2 { color: #343a40; text-transform: uppercase; font-weight: 700; margin-bottom: 20px; }
+    </style>
+  </head>
+  <body>
+    <h2>Employee Database Catalog</h2>
+    <table>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Job Title</th>
+      </tr>
+      <xsl:for-each select="company/employee">
+      <tr>
+        <td><xsl:value-of select="id"/></td>
+        <td><xsl:value-of select="name"/></td>
+        <td><xsl:value-of select="department"/></td>
+        <td><xsl:value-of select="title"/></td>
+      </tr>
+      </xsl:for-each>
+    </table>
+  </body>
+  </html>
+</xsl:template>
+</xsl:stylesheet>
+\end{lstlisting}
+
+\begin{lstlisting}[language=XML, caption={XML targeting XSL formatting references in week12\_prob4.xml}]
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="week12_prob4.xsl"?>
+<company>
+    <employee>
+        <id>SA7001</id>
+        <name>Robert Anderson</name>
+        <department>Information Technology</department>
+        <title>System Administrator</title>
+    </employee>
+    <employee>
+        <id>SA7002</id>
+        <name>Elena Rossi</name>
+        <department>Data Analytics</department>
+        <title>Machine Learning Engineer</title>
+    </employee>
+    <employee>
+        <id>SA7003</id>
+        <name>Marcus Cho</name>
+        <department>Web Engineering</department>
+        <title>Senior Frontend Developer</title>
+    </employee>
+</company>
+\end{lstlisting}
+
+\end{document}

@@ -1,0 +1,26 @@
+--- Loading Wine Dataset ---
+--- Training Logistic Regression Model ---
+
+--- Classification Performance Metrics ---
+Accuracy : 1.0000
+Precision: 1.0000
+Recall   : 1.0000
+F1-Score : 1.0000
+
+--- Confusion Matrix ---
+[[19  0  0]
+ [ 0 21  0]
+ [ 0  0 14]]
+
+--- Classification Report ---
+              precision    recall  f1-score   support
+
+     class_0       1.00      1.00      1.00        19
+     class_1       1.00      1.00      1.00        21
+     class_2       1.00      1.00      1.00        14
+
+    accuracy                           1.00        54
+   macro avg       1.00      1.00      1.00        54
+weighted avg       1.00      1.00      1.00        54
+
+Visualization saved successfully as 'confusion_matrix_w12.png'.

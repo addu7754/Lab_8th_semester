@@ -1,0 +1,8 @@
+Dataset loaded:
+   Month  Sales  Expenses
+0   Jan    150       100
+1   Feb    200       120
+2   Mar    180       150
+3   Apr    220       170
+4   May    250       160
+5   Jun    230       190

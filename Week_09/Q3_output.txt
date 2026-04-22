@@ -1,0 +1,16 @@
+--- 1. Generating Data ---
+
+--- 2. Identifying Outliers (IQR Method) ---
+Number of outliers detected: 8
+          Value
+75    74.676511
+123   74.653251
+159   20.204032
+164   27.048967
+200  150.000000
+201  160.000000
+202  -20.000000
+203  -30.000000
+
+--- 3. Removing Outliers ---
+Cleaned dataset shape: (196, 1)

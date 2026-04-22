@@ -1,0 +1,9 @@
+--- Loading and Splitting Dataset ---
+
+--- Training Model ---
+
+--- Regression Performance Metrics ---
+Mean Absolute Error (MAE): 42.79
+Root Mean Squared Error (RMSE): 53.85
+
+Plot saved successfully as 'actual_vs_predicted.png'.

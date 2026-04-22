@@ -1,0 +1,18 @@
+Original DataFrame:
+       A   B     C
+0  85.0  75  70.0
+1  45.0  55  85.0
+2   NaN  60  40.0
+3  90.0  95   NaN
+4  60.0  20  99.0
+
+DataFrame after removing missing values:
+       A   B     C
+0  85.0  75  70.0
+1  45.0  55  85.0
+4  60.0  20  99.0
+
+DataFrame applying condition (A >= 50):
+       A   B     C
+0  85.0  75  70.0
+4  60.0  20  99.0

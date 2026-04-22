@@ -1,0 +1,99 @@
+# Question 6: Dynamic Yearly Calendar (JS Prompt)
+
+**Problem Statement:** 
+Display the calendar using JAVA SCRIPT code by getting the year from the user.
+
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Yearly Calendar</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .month-container { display: inline-block; margin: 15px; border: 1px solid #aaa; padding: 10px; background: #fafafa; border-radius: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); width: 280px; }
+        .month-name { background: #333; color: white; padding: 5px; margin: -10px -10px 10px -10px; font-weight: bold; border-top-left-radius: 5px; border-top-right-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #ddd; padding: 5px; font-size: 14px;}
+        td { border: 1px solid #eee; padding: 8px; text-align: center; background: white;}
+        td.empty { background: transparent; border: none; }
+    </style>
+</head>
+<body>
+
+    <h2 id="calTitle">Javascript Yearly Calendar</h2>
+    <div id="calendarArea"></div>
+
+    <script>
+        // 1. Prompt user for year
+        let inputYear = prompt("Enter a year to print its calendar (e.g. 2026):", "2026");
+        let year = parseInt(inputYear);
+
+        if (!isNaN(year)) {
+            document.getElementById("calTitle").innerText = "Calendar for the Year " + year;
+            generateCalendar(year);
+        } else {
+            document.getElementById("calTitle").innerText = "Invalid Year Entered. Please Refresh.";
+        }
+
+        // 2. Generate Calendar Logic
+        function generateCalendar(y) {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+            let calendarHTML = "";
+
+            for (let m = 0; m < 12; m++) {
+                calendarHTML += `<div class="month-container"><div class="month-name">${months[m]} ${y}</div><table><tr>`;
+                
+                // Add Headers representing days of the week
+                for (let d = 0; d < 7; d++) {
+                    calendarHTML += `<th>${daysOfWeek[d]}</th>`;
+                }
+                calendarHTML += `</tr><tr>`;
+
+                // Calculate the start day of the week for the specific month (0 = Sunday, etc.)
+                let firstDay = new Date(y, m, 1).getDay();
+                // Number of days in the current month (calculated by using the 0th day of the *next* month)
+                let daysInMonth = new Date(y, m + 1, 0).getDate();
+
+                let dayCount = 1;
+                
+                // Print Empty table boxes for days falling before the 1st
+                for (let i = 0; i < firstDay; i++) {
+                    calendarHTML += `<td class="empty"></td>`;
+                }
+
+                // Add grid squares for standard days
+                for (let i = firstDay; i < 7; i++) {
+                    calendarHTML += `<td>${dayCount}</td>`;
+                    dayCount++;
+                }
+                calendarHTML += `</tr>`;
+
+                // Calculate and build subsequent weeks for the month
+                while (dayCount <= daysInMonth) {
+                    calendarHTML += `<tr>`;
+                    for (let i = 0; i < 7; i++) {
+                        if (dayCount <= daysInMonth) {
+                            calendar(continuation) 
+                            calendarHTML += `<td>${dayCount}</td>`;
+                            dayCount++;
+                        } else {
+                            calendarHTML += `<td class="empty"></td>`;
+                        }
+                    }
+                    calendarHTML += `</tr>`;
+                }
+                calendarHTML += `</table></div>`;
+            }
+
+            // Append all constructed tables to the DOM
+            document.getElementById("calendarArea").innerHTML = calendarHTML;
+        }
+    </script>
+
+</body>
+</html>
+```
+
+

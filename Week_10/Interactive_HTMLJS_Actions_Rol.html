@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Enhancements</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        .container { margin: 20px; }
+        img { width: 300px; height: 200px; transition: transform 0.5s; cursor: pointer; border-radius: 8px;}
+        select { padding: 10px; font-size: 16px; margin-top: 20px; cursor: pointer; }
+        
+        /* CSS Animation Class assigned via JS */
+        .animating-image {
+            animation: shake 0.5s;
+            animation-iteration-count: 2;
+        }
+
+        @keyframes shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            25% { transform: translate(-3px, 0px) rotate(-5deg); }
+            50% { transform: translate(2px, 2px) rotate(5deg); }
+            75% { transform: translate(-1px, -2px) rotate(-2deg); }
+            100% { transform: translate(1px, -1px) rotate(0deg); }
+        }
+    </style>
+    <script>
+        function animateImage(el) {
+            // Adds and removes the animation class so it can be re-triggered
+            el.classList.add('animating-image');
+            setTimeout(() => {
+                el.classList.remove('animating-image');
+            }, 1000);
+        }
+        
+        function navigateMenu(selectObj) {
+            let url = selectObj.value;
+            if (url) {
+                // Opens the specific page
+                window.open(url, "_blank");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Interactive Web Enhancements</h2>
+    
+    <div class="container">
+        <h3>1. Rollover Effect (Hover) & 2. Animation (Click)</h3>
+        <!-- Image changes on hover (Rollover) and animates on click -->
+        <img id="myImage" 
+             src="https://placehold.co/300x200/00008B/FFF?text=Hover+Me" 
+             onmouseover="this.src='https://placehold.co/300x200/B22222/FFF?text=Click+Me';"
+             onmouseout="this.src='https://placehold.co/300x200/00008B/FFF?text=Hover+Me';"
+             onclick="animateImage(this)" 
+             alt="Dynamic Image">
+    </div>
+
+    <div class="container">
+        <h3>3. Pull-Down Navigation Menu</h3>
+        <!-- Select box acting as a navigational pull-down list -->
+        <select onchange="navigateMenu(this)">
+            <option value="">-- Choose a Destination --</option>
+            <option value="https://www.google.com">Search Engine (Google)</option>
+            <option value="https://www.github.com">Code Repository (GitHub)</option>
+            <option value="https://www.wikipedia.org">Knowledge Base (Wikipedia)</option>
+        </select>
+    </div>
+
+</body>
+</html>

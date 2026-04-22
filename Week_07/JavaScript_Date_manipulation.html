@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day of the Week</title>
+</head>
+<body>
+    <script>
+        // Prompt user for a date
+        let userInput = prompt("Enter an integer between 1 and 31:");
+        let dateNum = parseInt(userInput);
+        
+        if (dateNum >= 1 && dateNum <= 31) {
+            let d = new Date();
+            
+            // Set the date to the user's input
+            d.setDate(dateNum);
+            
+            // Array of weekdays
+            let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            
+            // Get the day of the week 
+            document.write("<h3>The day of the week for date " + dateNum + " is: " + days[d.getDay()] + "</h3>");
+        } else {
+            document.write("<h3>Invalid input. Please refresh and enter a number between 1 and 31.</h3>");
+        }
+    </script>
+</body>
+</html>

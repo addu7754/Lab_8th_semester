@@ -1,0 +1,21 @@
+Original DataFrame:
+    col1 col2
+0     1    4
+1     2    5
+2     3    6
+
+Original Data Types:
+ col1     int64
+col2    object
+dtype: object
+
+Modified DataFrame:
+    ID  Score
+0   1      4
+1   2      5
+2   3      6
+
+Modified Data Types:
+ ID       int64
+Score    int64
+dtype: object

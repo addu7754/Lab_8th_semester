@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="week12_prob3.css"?>
+<books>
+    <book>
+        <title>Web Engineering Design Principles</title>
+        <author>Dr. Jane Carter</author>
+        <price>$45.99</price>
+    </book>
+    <book>
+        <title>Advanced Data Science Algorithms</title>
+        <author>William B. Smith</author>
+        <price>$52.50</price>
+    </book>
+    <book>
+        <title>A Hybrid Cloud Architecture Guide</title>
+        <author>Anna Richards</author>
+        <price>$38.00</price>
+    </book>
+</books>

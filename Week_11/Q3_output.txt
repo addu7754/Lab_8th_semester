@@ -1,0 +1,8 @@
+--- Loading Dataset ---
+Original dataset shape: (442, 11)
+
+--- Data Splitting Results ---
+Training features (X_train) shape: (353, 10)
+Testing features (X_test) shape: (89, 10)
+Training target (y_train) shape: (353,)
+Testing target (y_test) shape: (89,)
